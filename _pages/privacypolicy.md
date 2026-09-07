@@ -5,7 +5,7 @@ title: Privacy Policy
 ---
 
 **Last updated**  
-5/6/2026
+9/7/2026
 
 # Privacy Policy
 
@@ -32,16 +32,19 @@ Yuzic does **not** collect, store, or share personal information.
 
 <br>
 
-## 2.0 Audio Permissions
+## 2.0 Permissions
 
-Yuzic may request microphone or "record audio" permission because some
-operating systems require it for audio playback routing.
+Yuzic requests only the permissions it needs to play music:
 
-- The app does **not** record, store, analyze, or transmit microphone
-  input
-- The permission is used **only** to enable smooth and uninterrupted
-  music playback
-- No voice input or audio capture features are present
+- **Internet access**, to reach the servers you configure
+- **Media playback in the background**, so audio continues when the app
+  is not in front
+- **Audio settings**, to route playback to your chosen output and
+  respond to other apps taking over the audio
+- **Vibration**, for haptic feedback in the interface
+
+Yuzic does **not** request microphone or "record audio" permission. It
+has no voice input and no audio capture features of any kind.
 
 <br>
 
@@ -92,10 +95,10 @@ Yuzic supports connections to user-operated media servers including
 - The developer has no access to your server, its content, or any data
   exchanged
 
-### 3.4 Optional Integrations (Lidarr, Slskd)
+### 3.4 Optional Integrations (Lidarr, Slskd, SoulSync)
 
 Yuzic supports optional integrations with self-hosted tools such as
-**Lidarr** and **Slskd**.
+**Lidarr**, **Slskd** and **SoulSync**.
 
 - These integrations connect directly to servers you own and control
 - No data from these connections is accessible to or stored by the

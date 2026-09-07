@@ -9,6 +9,32 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.0.0**
+Yuzic now has its own audio engine. Playback was rebuilt from the ground up around an audio graph rather than a single player, which is what makes crossfade, gapless joins and a real equalizer possible at all. The rest of the app caught up around it.
+
+#### What's New
+- A new audio engine, built for Yuzic
+- Crossfade, with a gapless-aware mode that does not fade a segued album through its own joins
+- Ten-band equalizer and replay gain, with album and track modes
+- Ogg Vorbis and Opus now play at original quality on iOS
+- CarPlay and Android Auto play the quality you actually chose
+- A unified Downloads screen, with progress and cancel
+- Automatically download new songs
+- SoulSync as a download source
+- Sleep timer that fades out rather than cutting
+- Appearance settings for list density, corner radius, glyph scale and a translucent dock
+- The bottom of the app is one dock instead of a card on a slab
+- Screen reader labels on every control you can reach
+- More of the app speaks your language
+
+#### Bug Fixes
+- Screens now say when they failed, instead of saying they are empty
+- The app tells outside services to wait until asked, rather than reaching out on its own
+- Album screens keep the colour their cover actually has
+- Sort controls say how a list is ordered rather than restating the title
+- Lidarr album downloads resolve more reliably
+- Removed Cast and trimmed permissions
+
 # **Version 1.3.0**
 This version focuses on music discovery. Using Deezer recommendations, similar songs, etc are seen throughout the app.
 

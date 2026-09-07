@@ -5,7 +5,7 @@ title: Terms of Use
 ---
 
 **Last updated**  
-5/6/2026
+9/7/2026
 
 # Terms of Use
 
@@ -93,7 +93,7 @@ legality and licensing of any content hosted on servers you connect to.
 ### 5.4 Other Integrations
 
 Yuzic supports optional integrations with self-hosted tools such as
-Lidarr and Slskd. Use of these integrations is governed by the terms of
+Lidarr, Slskd and SoulSync. Use of these integrations is governed by the terms of
 those respective projects. The Developer is not responsible for
 third-party services or content accessed through these integrations.
 
