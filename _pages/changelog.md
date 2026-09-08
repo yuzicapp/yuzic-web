@@ -9,6 +9,23 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.0.1**
+Fixes for playback on a weak connection, and a Settings screen sorted by what things actually are.
+
+#### Playback
+- Songs no longer cut off part-way through when the network stalls
+- A brief drop no longer ends the track — playback picks the file back up
+- The player says it is buffering instead of going quiet while it retries
+
+#### The app
+- Screens say when they failed to load, instead of looking empty
+- An outage at Deezer or Last.fm no longer reports your own server as unreachable
+
+#### Settings
+- The equalizer has its own screen, so scrolling past it cannot move a band
+- Playback holds what you hear and Appearance holds what you see
+- Home shelf sources moved to their own Home screen
+
 # **Version 2.0.0**
 Yuzic now has its own audio engine. Playback was rebuilt from the ground up around an audio graph rather than a single player, which is what makes crossfade, gapless joins and a real equalizer possible at all. The rest of the app caught up around it.
 
@@ -34,24 +51,6 @@ Yuzic now has its own audio engine. Playback was rebuilt from the ground up arou
 - Sort controls say how a list is ordered rather than restating the title
 - Lidarr album downloads resolve more reliably
 - Removed Cast and trimmed permissions
-
-# **Version 1.3.0**
-This version focuses on music discovery. Using Deezer recommendations, similar songs, etc are seen throughout the app.
-
-#### What's New
-- Carplay & Android Auto
-- Deezer external song samples
-- Updated library screens and discovery sections
-- Better search with Deezer
-- Last.fm scrobbling
-- Downloading more accessible
-- Better discographies
-- Offline polish
-- External artist top tracks
-
-#### Bug Fixes
-- Crashes?
-- Performance
 
 ### **Version 1.3.4**
 
@@ -99,6 +98,24 @@ This version focuses on music discovery. Using Deezer recommendations, similar s
 
 #### Bug Fixes
 - View external artist
+
+# **Version 1.3.0**
+This version focuses on music discovery. Using Deezer recommendations, similar songs, etc are seen throughout the app.
+
+#### What's New
+- Carplay & Android Auto
+- Deezer external song samples
+- Updated library screens and discovery sections
+- Better search with Deezer
+- Last.fm scrobbling
+- Downloading more accessible
+- Better discographies
+- Offline polish
+- External artist top tracks
+
+#### Bug Fixes
+- Crashes?
+- Performance
 
 # **Version 1.2.0**
 The app has been further redesigned to accommodate a more standard music player experience, and also to allow the app to grow further. Tabs now exist at the bottom. The explore screen becomes the new Home Screen and the library has a dedicated screen with downloads as well. The app has also become offline first, ensuring that it works with no connection. I moved back to react-native-track-player to get better performance and less crashes. We'll see which track player I end up using in the long run.
