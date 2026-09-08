@@ -4,33 +4,29 @@
   position: sticky;
   top: 0;
   z-index: 20;
-  background: color-mix(in srgb, var(--bg) 82%, transparent);
-  backdrop-filter: saturate(1.6) blur(14px);
-  border-bottom: 1px solid var(--line-soft);
+  background: color-mix(in srgb, var(--bg) 84%, transparent);
+  backdrop-filter: saturate(1.4) blur(16px);
+  border-bottom: 1px solid var(--line);
 }
 
 .site-header__inner {
   display: flex;
   align-items: center;
   gap: var(--space-md);
-  min-height: 60px;
+  min-height: 58px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.55rem;
   color: var(--text);
   font-family: var(--font-display);
-  font-weight: 600;
+  font-weight: 650;
   letter-spacing: -0.02em;
 }
 .brand:hover { color: var(--text); }
-.brand img {
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
-}
+.brand img { width: 26px; height: 26px; border-radius: 7px; }
 
 .site-nav {
   margin-left: auto;
@@ -38,15 +34,13 @@
   align-items: center;
   gap: clamp(0.75rem, 2.5vw, 1.5rem);
 }
-.site-nav a {
-  color: var(--text-dim);
-  font-size: 0.925rem;
-}
+.site-nav a { color: var(--text-dim); font-size: 0.925rem; }
 .site-nav a:hover { color: var(--text); }
 
+// The app's controls are filled shapes on black, not outlined ones.
 .theme-toggle {
-  background: transparent;
-  border: 1px solid var(--line);
+  background: var(--muted);
+  border: 0;
   color: var(--text-dim);
   width: 34px;
   height: 34px;
@@ -54,115 +48,146 @@
   display: grid;
   place-items: center;
   cursor: pointer;
-  transition: border-color 140ms ease, color 140ms ease;
+  transition: color 140ms ease, background 140ms ease;
 }
-.theme-toggle:hover { color: var(--text); border-color: var(--text-faint); }
+.theme-toggle:hover { color: var(--text); background: var(--surface-2); }
 .theme-toggle svg { width: 16px; height: 16px; }
-[data-theme="light"] .theme-toggle .icon-sun { display: none; }
 .theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .icon-sun { display: none; }
 [data-theme="light"] .theme-toggle .icon-moon { display: block; }
 
 // ── Hero ─────────────────────────────────────────────────────────────────────
+//
+// Centred and close to full height, which is the shape of the portfolio's
+// intro: one statement, nothing competing with it, and the page starting
+// below the fold.
 
 .hero {
-  padding-block: clamp(4rem, 14vh, 8rem) var(--space-section);
+  min-height: calc(100svh - 58px);
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-block: var(--space-xl) var(--space-section);
   position: relative;
   overflow: hidden;
 }
 
-// One soft coral bloom behind the wordmark. The old theme used a full-bleed
-// photographic header that fought every piece of text on top of it.
 .hero::before {
   content: "";
   position: absolute;
-  inset: -30% 20% auto -10%;
-  height: 480px;
+  inset: -20% -10% auto;
+  height: 560px;
   background: radial-gradient(closest-side, var(--accent-dim), transparent);
   pointer-events: none;
 }
 
-.hero__inner { position: relative; }
+.hero__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 .hero__icon {
-  width: 84px;
-  height: 84px;
-  border-radius: 20px;
-  box-shadow: var(--shadow);
+  width: 76px;
+  height: 76px;
+  border-radius: 18px;
   margin-bottom: var(--space-lg);
 }
 
 .hero__title {
-  font-size: clamp(2.75rem, 8vw, 4.75rem);
-  letter-spacing: -0.035em;
+  font-size: clamp(2.5rem, 7vw, 4.25rem);
+  letter-spacing: -0.04em;
+  font-weight: 700;
   margin-bottom: var(--space-md);
+  max-width: 16ch;
 }
 
 .hero__lede {
-  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  font-size: clamp(1rem, 1.9vw, 1.2rem);
   color: var(--text-dim);
-  max-width: 46ch;
+  max-width: 52ch;
   margin-bottom: var(--space-xl);
 }
 
 .hero__note {
   margin-top: var(--space-lg);
   color: var(--text-faint);
-  font-size: 0.9rem;
+  font-size: 0.875rem;
 }
 
-// ── Store buttons ────────────────────────────────────────────────────────────
+// ── Buttons ──────────────────────────────────────────────────────────────────
 
 .store-row {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
+  justify-content: center;
 }
+.section .store-row { justify-content: flex-start; }
 
 .store-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.7rem 1.15rem;
+  gap: 0.6rem;
+  padding: 0.72rem 1.2rem;
   border-radius: var(--radius-pill);
-  border: 1px solid var(--line);
-  background: var(--bg-raised);
+  border: 0;
+  background: var(--muted);
   color: var(--text);
   font-weight: 550;
   font-size: 0.95rem;
-  transition: border-color 140ms ease, transform 140ms ease;
+  transition: background 140ms ease;
 }
-.store-btn:hover {
-  color: var(--text);
-  border-color: var(--text-faint);
-  transform: translateY(-1px);
-}
-.store-btn--primary {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: #14141a;
-}
-.store-btn--primary:hover {
-  background: var(--accent-strong);
-  border-color: var(--accent-strong);
-  color: #14141a;
-}
+.store-btn:hover { color: var(--text); background: var(--surface-2); }
+.store-btn--primary { background: var(--accent); color: var(--on-accent); }
+.store-btn--primary:hover { background: var(--accent-strong); color: var(--on-accent); }
 .store-btn svg { width: 18px; height: 18px; }
 
+// ── Sections ─────────────────────────────────────────────────────────────────
+//
+// A label above a card, which is how every screen in the app is laid out:
+// "General", then the card; "Audio", then the card.
+
+.section {
+  padding-block: var(--space-section);
+}
+
+.section__label {
+  font-size: 0.8rem;
+  font-weight: 550;
+  color: var(--text-faint);
+  margin-bottom: var(--space-xs);
+}
+
+.section__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.3rem);
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-md);
+}
+
+.section__lede {
+  color: var(--text-dim);
+  max-width: var(--measure);
+  font-size: 1.02rem;
+}
+
 // ── Features ─────────────────────────────────────────────────────────────────
+//
+// Filled cards on black with the app's own corner radius, spaced apart —
+// not a hairline grid. The app has no outlined surfaces anywhere.
 
 .feature-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
-  gap: 1px;
-  background: var(--line-soft);
-  border: 1px solid var(--line-soft);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  gap: var(--space-sm);
   margin-top: var(--space-xl);
 }
 
 .feature {
-  background: var(--bg);
+  background: var(--surface);
+  border-radius: var(--radius-lg);
   padding: var(--space-lg);
   display: flex;
   flex-direction: column;
@@ -170,15 +195,15 @@
 }
 
 .feature__title {
-  font-size: 1.02rem;
-  font-weight: 600;
   font-family: var(--font-display);
-  letter-spacing: -0.01em;
+  font-size: 1.02rem;
+  font-weight: 650;
+  letter-spacing: -0.015em;
 }
 
 .feature__body {
   color: var(--text-dim);
-  font-size: 0.93rem;
+  font-size: 0.925rem;
   line-height: 1.6;
 }
 
@@ -192,7 +217,6 @@
   padding-block: var(--space-xl) var(--space-sm);
   margin-inline: calc(-1 * clamp(1.25rem, 5vw, 2.5rem));
   padding-inline: clamp(1.25rem, 5vw, 2.5rem);
-  scrollbar-width: thin;
 }
 
 .shot {
@@ -200,13 +224,11 @@
   width: min(232px, 62vw);
   scroll-snap-align: start;
   border-radius: var(--radius-lg);
-  border: 1px solid var(--line);
-  background: var(--bg-raised);
+  background: var(--surface);
   overflow: hidden;
-  box-shadow: var(--shadow);
 }
 
-// ── Server / integration lists ───────────────────────────────────────────────
+// ── Chips ────────────────────────────────────────────────────────────────────
 
 .chip-row {
   display: flex;
@@ -216,18 +238,17 @@
 }
 
 .chip {
-  border: 1px solid var(--line);
-  background: var(--bg-raised);
+  background: var(--muted);
   color: var(--text-dim);
   border-radius: var(--radius-pill);
-  padding: 0.4rem 0.9rem;
+  padding: 0.42rem 0.95rem;
   font-size: 0.875rem;
 }
 
 // ── Footer ───────────────────────────────────────────────────────────────────
 
 .site-footer {
-  border-top: 1px solid var(--line-soft);
+  border-top: 1px solid var(--line);
   padding-block: var(--space-xl);
   color: var(--text-faint);
   font-size: 0.9rem;
@@ -250,13 +271,8 @@
 .site-footer__links a:hover { color: var(--text); }
 
 // ── Markdown pages ───────────────────────────────────────────────────────────
-//
-// Replaces 980 lines of vendored github-markdown.css. These pages are a
-// changelog and two policies: they need readable prose and nothing else.
 
-.page {
-  padding-block: var(--space-xl) var(--space-section);
-}
+.page { padding-block: var(--space-xl) var(--space-section); }
 
 .prose {
   max-width: var(--measure);
@@ -264,33 +280,29 @@
 }
 
 .prose h1 {
-  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-size: clamp(1.9rem, 5vw, 2.6rem);
   color: var(--text);
   margin-bottom: var(--space-lg);
 }
 
 .prose h2 {
-  font-size: 1.45rem;
+  font-size: 1.4rem;
   color: var(--text);
   margin-top: var(--space-xl);
   margin-bottom: var(--space-sm);
-  padding-top: var(--space-md);
-  border-top: 1px solid var(--line-soft);
 }
 
 .prose h3 {
-  font-size: 1.08rem;
+  font-size: 1.05rem;
   color: var(--text);
   margin-top: var(--space-lg);
   margin-bottom: var(--space-xs);
 }
 
 .prose h4 {
-  font-size: 0.78rem;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-family: var(--font-mono);
+  font-size: 0.9rem;
   color: var(--text-faint);
+  font-weight: 550;
   margin-top: var(--space-lg);
   margin-bottom: var(--space-xs);
 }
@@ -298,26 +310,21 @@
 .prose p,
 .prose ul,
 .prose ol { margin-block: var(--space-sm); }
-
-.prose ul,
-.prose ol { padding-left: 1.25rem; }
-
+.prose ul, .prose ol { padding-left: 1.25rem; }
 .prose li { margin-block: 0.3rem; }
-
 .prose strong { color: var(--text); font-weight: 600; }
 
 .prose code {
   font-family: var(--font-mono);
   font-size: 0.875em;
-  background: var(--bg-sunken);
-  border: 1px solid var(--line-soft);
+  background: var(--muted);
   border-radius: 6px;
   padding: 0.1em 0.4em;
 }
 
 .prose hr {
   border: 0;
-  border-top: 1px solid var(--line-soft);
+  border-top: 1px solid var(--line);
   margin-block: var(--space-xl);
 }
 
@@ -326,17 +333,6 @@
   padding-left: var(--space-md);
   border-left: 2px solid var(--accent);
   color: var(--text-dim);
-}
-
-// A version heading in the changelog reads as a release, not as prose.
-.prose h1 + p em,
-.prose .release-tag {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-style: normal;
 }
 
 @media (max-width: 640px) {

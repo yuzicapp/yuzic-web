@@ -62,37 +62,16 @@ img { max-width: 100%; display: block; }
   padding-inline: clamp(1.25rem, 5vw, 2.5rem);
 }
 
-.section {
-  padding-block: var(--space-section);
-  border-top: 1px solid var(--line-soft);
-}
 
-.section__label {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--text-faint);
-  margin-bottom: var(--space-md);
-}
 
-.section__title {
-  font-size: clamp(1.6rem, 3.5vw, 2.35rem);
-  margin-bottom: var(--space-md);
-}
 
-.section__lede {
-  color: var(--text-dim);
-  max-width: var(--measure);
-  font-size: 1.05rem;
-}
 
 .skip-link {
   position: absolute;
   left: -9999px;
   top: 0;
   background: var(--accent);
-  color: #12121a;
+  color: var(--on-accent);
   padding: 0.6rem 1rem;
   z-index: 100;
   border-radius: 0 0 var(--radius) 0;
