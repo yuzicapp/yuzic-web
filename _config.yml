@@ -22,7 +22,7 @@ enable_smart_app_banner                   : true                                
 your_name                                 : Zachary Starnes                              
 your_link                                 : https://www.aritools.xyz/                                                
 email_address                             : zackhhi@gmail.com                                       
-github_username                           : eftpmc
+github_username                           : yuzicapp
 
 
 
@@ -30,36 +30,48 @@ github_username                           : eftpmc
 features                                  :
 
   - title                                 : Unified Music Library Across Servers
-    description                           : Yuzic connects to Navidrome, Jellyfin, and other subsonic servers, merging albums, artists, playlists, and tracks into a single library.
+    description                           : Yuzic connects to Navidrome, Jellyfin, Emby, and other Subsonic servers, merging albums, artists, playlists, and tracks into a single library.
     fontawesome_icon_name                 : desktop
-    
-  - title                                 : Offline & Download Support
-    description                           : Easily download albums and playlists for later.
+
+  - title                                 : Its Own Audio Engine
+    description                           : Playback is built on an audio graph written for Yuzic, not a stock player. That is what makes everything below expressible at all.
+    fontawesome_icon_name                 : microchip
+
+  - title                                 : Crossfade &amp; Gapless
+    description                           : Fade one track into the next, with a gapless-aware mode that leaves a segued album to play through its own joins untouched.
+    fontawesome_icon_name                 : exchange-alt
+
+  - title                                 : Ten-Band Equalizer &amp; Replay Gain
+    description                           : Shape the sound to the room you are in, and even out volume across a library with album and track gain modes.
+    fontawesome_icon_name                 : sliders-h
+
+  - title                                 : Offline &amp; Download Support
+    description                           : Download songs, albums, and playlists for later, follow them on one Downloads screen, and have new songs arrive automatically. Edits you make offline replay when you are back.
     fontawesome_icon_name                 : download
 
-  - title                                 : Customizable UI & Layout
-    description                           : Users can control the main view, column count, theme color, and more.
+  - title                                 : In the Car, and on the Lock Screen
+    description                           : CarPlay and Android Auto play the quality you actually chose, and the lock screen and media controls stay in step with the app.
+    fontawesome_icon_name                 : car
+
+  - title                                 : Customizable UI &amp; Layout
+    description                           : Light, dark, or system, an accent colour, artwork-tinted screens, and scales you can move yourself — corner radius, list density, glyph size, and column count.
     fontawesome_icon_name                 : paint-roller
 
   - title                                 : A pretty UI
     description                           : Yuzic is designed to be clean and minimal. Simplicity is key.
     fontawesome_icon_name                 : mobile
 
-  - title                                 : Search & Browsing
-    description                           : Quickly find songs, albums, artists, or playlists, even in large libraries.
+  - title                                 : Search &amp; Browsing
+    description                           : Quickly find songs, albums, artists, or playlists, even in large libraries, with sortable collections and genres throughout.
     fontawesome_icon_name                 : list
-  
-  - title                                 : Text-to-Music
-    description                           : Type out what kind of music you would like to listen to, and Yuzic has you covered.
-    fontawesome_icon_name                 : font
+
+  - title                                 : Reaches Everyone
+    description                           : Screen reader labels on every control you can reach, text that scales with your system size, and an interface in English, French, Japanese, and Chinese.
+    fontawesome_icon_name                 : universal-access
 
   - title                                 : Privacy-First by Design
-    description                           : No ads, no tracking by default, no data selling.
+    description                           : No ads, no tracking by default, no data selling. Every outside service stays off until you turn it on.
     fontawesome_icon_name                 : lock
-
-  - title                                 : Fast, Reliable Playback
-    description                           : Music starts (almost) instantly, keeps playing in the background, and works smoothly with lock-screen and media controls.
-    fontawesome_icon_name                 : play
 
   - title                                 : Plugins
     description                           : Connect to other services to expand the capabilities of the app.
