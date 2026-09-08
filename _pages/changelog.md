@@ -9,6 +9,17 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.0.2**
+More of the same fault, found properly this time: a stalled stream that never reported anything at all.
+
+#### Playback
+- Tracks no longer go quiet part-way through on a patchy connection
+- A crossfaded track no longer stops the queue when it finishes
+- Playing again works after a stream fails or a headphone disconnects
+- The player says "buffering" instead of going silent while it retries
+- Fewer requests to your server while music is playing
+- A failed download is no longer cached as silence
+
 # **Version 2.0.1**
 Fixes for playback on a weak connection, and a Settings screen sorted by what things actually are.
 
