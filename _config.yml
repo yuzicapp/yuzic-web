@@ -61,6 +61,17 @@ features:
     description: No ads, no tracking. Every service off until you turn it on.
 
 
+# The two repositories. The engine is its own project with its own licence,
+# and the site should say so rather than folding it into the app.
+projects:
+  - name: Yuzic
+    description: The app. React Native, GPL-3.0.
+    url: https://github.com/yuzicapp/yuzic
+  - name: yuzic-engine
+    description: The audio engine underneath it. Swift and Kotlin, Apache-2.0.
+    url: https://github.com/yuzicapp/yuzic-engine
+
+
 # Servers, integrations and downloaders the app speaks to.
 works_with:
   - Navidrome

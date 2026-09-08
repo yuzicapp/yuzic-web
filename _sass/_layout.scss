@@ -37,14 +37,17 @@
 .site-nav a { color: var(--text-dim); font-size: 0.925rem; }
 .site-nav a:hover { color: var(--text); }
 
-// The app's controls are filled shapes on black, not outlined ones.
+// A control is a rounded rectangle and a chip is a pill — which is the split
+// the app already makes: the theme buttons in Appearance are rounded rects,
+// the equalizer presets are pills. Rounding a control to a circle borrowed
+// the wrong one.
 .theme-toggle {
   background: var(--muted);
   border: 0;
   color: var(--text-dim);
   width: 34px;
   height: 34px;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius);
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -130,7 +133,7 @@
   align-items: center;
   gap: 0.6rem;
   padding: 0.72rem 1.2rem;
-  border-radius: var(--radius-pill);
+  border-radius: var(--radius);
   border: 0;
   background: var(--muted);
   color: var(--text);
@@ -192,6 +195,12 @@
   flex-direction: column;
   gap: var(--space-xs);
 }
+
+.feature--link {
+  color: inherit;
+  transition: background 140ms ease;
+}
+.feature--link:hover { background: var(--surface-2); color: inherit; }
 
 .feature__title {
   font-family: var(--font-display);

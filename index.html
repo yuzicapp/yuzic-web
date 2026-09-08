@@ -56,6 +56,20 @@ layout: default
 </section>
 {% endif %}
 
+<section class="section" id="source">
+  <div class="wrap">
+    <h2 class="section__title">Open source</h2>
+    <div class="feature-grid">
+      {% for project in site.projects %}
+      <a class="feature feature--link" href="{{ project.url }}">
+        <h3 class="feature__title">{{ project.name }}</h3>
+        <p class="feature__body">{{ project.description }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <section class="section" id="servers">
   <div class="wrap">
     <h2 class="section__title">Works with</h2>
