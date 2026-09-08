@@ -100,7 +100,6 @@
   letter-spacing: -0.04em;
   font-weight: 700;
   margin-bottom: var(--space-md);
-  max-width: 16ch;
 }
 
 .hero__lede {
@@ -277,6 +276,25 @@
 .prose {
   max-width: var(--measure);
   color: var(--text-dim);
+  // A changelog carries version strings and the odd long URL; neither should
+  // be able to push the page sideways on a phone.
+  overflow-wrap: anywhere;
+}
+
+.prose pre {
+  overflow-x: auto;
+  background: var(--muted);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+.prose img { border-radius: var(--radius); }
+
+.prose table {
+  width: 100%;
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
 }
 
 .prose h1 {

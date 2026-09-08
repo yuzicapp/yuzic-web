@@ -8,7 +8,7 @@
 # What is left is content.
 
 app_name: Yuzic
-tagline: A music player for the server you already run.
+tagline: Your server, played properly.
 app_description: >-
   A free and open source music player for Navidrome, Jellyfin, Emby and other
   Subsonic servers.
