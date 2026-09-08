@@ -1,0 +1,344 @@
+// ── Site chrome ──────────────────────────────────────────────────────────────
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter: saturate(1.6) blur(14px);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  min-height: 60px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--text);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.brand:hover { color: var(--text); }
+.brand img {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+}
+
+.site-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2.5vw, 1.5rem);
+}
+.site-nav a {
+  color: var(--text-dim);
+  font-size: 0.925rem;
+}
+.site-nav a:hover { color: var(--text); }
+
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--text-dim);
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-pill);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border-color 140ms ease, color 140ms ease;
+}
+.theme-toggle:hover { color: var(--text); border-color: var(--text-faint); }
+.theme-toggle svg { width: 16px; height: 16px; }
+[data-theme="light"] .theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: none; }
+[data-theme="light"] .theme-toggle .icon-moon { display: block; }
+
+// ── Hero ─────────────────────────────────────────────────────────────────────
+
+.hero {
+  padding-block: clamp(4rem, 14vh, 8rem) var(--space-section);
+  position: relative;
+  overflow: hidden;
+}
+
+// One soft coral bloom behind the wordmark. The old theme used a full-bleed
+// photographic header that fought every piece of text on top of it.
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -30% 20% auto -10%;
+  height: 480px;
+  background: radial-gradient(closest-side, var(--accent-dim), transparent);
+  pointer-events: none;
+}
+
+.hero__inner { position: relative; }
+
+.hero__icon {
+  width: 84px;
+  height: 84px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  margin-bottom: var(--space-lg);
+}
+
+.hero__title {
+  font-size: clamp(2.75rem, 8vw, 4.75rem);
+  letter-spacing: -0.035em;
+  margin-bottom: var(--space-md);
+}
+
+.hero__lede {
+  font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  color: var(--text-dim);
+  max-width: 46ch;
+  margin-bottom: var(--space-xl);
+}
+
+.hero__note {
+  margin-top: var(--space-lg);
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}
+
+// ── Store buttons ────────────────────────────────────────────────────────────
+
+.store-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.7rem 1.15rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  color: var(--text);
+  font-weight: 550;
+  font-size: 0.95rem;
+  transition: border-color 140ms ease, transform 140ms ease;
+}
+.store-btn:hover {
+  color: var(--text);
+  border-color: var(--text-faint);
+  transform: translateY(-1px);
+}
+.store-btn--primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #14141a;
+}
+.store-btn--primary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  color: #14141a;
+}
+.store-btn svg { width: 18px; height: 18px; }
+
+// ── Features ─────────────────────────────────────────────────────────────────
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+  gap: 1px;
+  background: var(--line-soft);
+  border: 1px solid var(--line-soft);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: var(--space-xl);
+}
+
+.feature {
+  background: var(--bg);
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.feature__title {
+  font-size: 1.02rem;
+  font-weight: 600;
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+.feature__body {
+  color: var(--text-dim);
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
+// ── Shots ────────────────────────────────────────────────────────────────────
+
+.shots {
+  display: flex;
+  gap: var(--space-md);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-block: var(--space-xl) var(--space-sm);
+  margin-inline: calc(-1 * clamp(1.25rem, 5vw, 2.5rem));
+  padding-inline: clamp(1.25rem, 5vw, 2.5rem);
+  scrollbar-width: thin;
+}
+
+.shot {
+  flex: 0 0 auto;
+  width: min(232px, 62vw);
+  scroll-snap-align: start;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+// ── Server / integration lists ───────────────────────────────────────────────
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin-top: var(--space-lg);
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: var(--bg-raised);
+  color: var(--text-dim);
+  border-radius: var(--radius-pill);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.875rem;
+}
+
+// ── Footer ───────────────────────────────────────────────────────────────────
+
+.site-footer {
+  border-top: 1px solid var(--line-soft);
+  padding-block: var(--space-xl);
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+  align-items: center;
+}
+
+.site-footer__links {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+.site-footer__links a { color: var(--text-dim); }
+.site-footer__links a:hover { color: var(--text); }
+
+// ── Markdown pages ───────────────────────────────────────────────────────────
+//
+// Replaces 980 lines of vendored github-markdown.css. These pages are a
+// changelog and two policies: they need readable prose and nothing else.
+
+.page {
+  padding-block: var(--space-xl) var(--space-section);
+}
+
+.prose {
+  max-width: var(--measure);
+  color: var(--text-dim);
+}
+
+.prose h1 {
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  color: var(--text);
+  margin-bottom: var(--space-lg);
+}
+
+.prose h2 {
+  font-size: 1.45rem;
+  color: var(--text);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-sm);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--line-soft);
+}
+
+.prose h3 {
+  font-size: 1.08rem;
+  color: var(--text);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.prose h4 {
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-family: var(--font-mono);
+  color: var(--text-faint);
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.prose p,
+.prose ul,
+.prose ol { margin-block: var(--space-sm); }
+
+.prose ul,
+.prose ol { padding-left: 1.25rem; }
+
+.prose li { margin-block: 0.3rem; }
+
+.prose strong { color: var(--text); font-weight: 600; }
+
+.prose code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
+  background: var(--bg-sunken);
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  padding: 0.1em 0.4em;
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--line-soft);
+  margin-block: var(--space-xl);
+}
+
+.prose blockquote {
+  margin: var(--space-md) 0;
+  padding-left: var(--space-md);
+  border-left: 2px solid var(--accent);
+  color: var(--text-dim);
+}
+
+// A version heading in the changelog reads as a release, not as prose.
+.prose h1 + p em,
+.prose .release-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-style: normal;
+}
+
+@media (max-width: 640px) {
+  .site-nav a.is-optional { display: none; }
+}

@@ -1,0 +1,65 @@
+// Everything the rest of the site is allowed to reach for.
+//
+// The old theme had 686 lines of layout and 980 of vendored markdown CSS with
+// no shared vocabulary — colours were literals, spacing was whatever the fork
+// happened to use, and the two stylesheets disagreed about both. This is the
+// whole palette and the whole scale.
+
+:root {
+  // Dark by default, because the app is. Light is a real mode, not an
+  // afterthought, but this site is a dark object with a light variant.
+  --bg: #0b0b0d;
+  --bg-raised: #141417;
+  --bg-sunken: #08080a;
+  --line: #24242a;
+  --line-soft: #1a1a1f;
+
+  --text: #f2f2f4;
+  --text-dim: #a0a0aa;
+  --text-faint: #6e6e78;
+
+  // Yuzic's coral. The one colour with a job.
+  --accent: #ff8a8a;
+  --accent-strong: #ff6b6b;
+  --accent-dim: rgba(255, 138, 138, 0.14);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  // A single vertical rhythm. Sections breathe at --space-section, everything
+  // inside them steps down from there.
+  --space-section: clamp(5rem, 12vh, 9rem);
+  --space-xl: 3rem;
+  --space-lg: 2rem;
+  --space-md: 1.25rem;
+  --space-sm: 0.75rem;
+  --space-xs: 0.4rem;
+
+  --measure: 68ch;
+  --page: 1080px;
+
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="light"] {
+  --bg: #fbfbfc;
+  --bg-raised: #ffffff;
+  --bg-sunken: #f2f2f4;
+  --line: #e2e2e7;
+  --line-soft: #ededf1;
+
+  --text: #14141a;
+  --text-dim: #55555f;
+  --text-faint: #86868f;
+
+  --accent: #e05a5a;
+  --accent-strong: #cc4444;
+  --accent-dim: rgba(224, 90, 90, 0.1);
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 12px 32px rgba(0, 0, 0, 0.07);
+}

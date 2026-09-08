@@ -1,135 +1,116 @@
-#page title
-page_title                                :                                           # Automatically populates with app name if not set and if iOS app ID is set. Otherwise enter manually.
+# Yuzic — site configuration
+#
+# What used to live here was a template's control panel: twenty colour keys,
+# a device-frame colour, header overlay transparencies. That is what a
+# re-skinnable fork needs and what a real site does not. Colours now live in
+# `_sass/_tokens.scss`, where they can also switch theme at runtime.
+#
+# What is left is content.
 
-# App Info
-ios_app_id                                : 6740042497                                # Required. Enter iOS app ID to automatically populate name, price and icons (e.g. 718043190).
-ios_app_country                           : us                                        # Required outside USA. Enter 2 letter country code as in https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
+app_name: Yuzic
+tagline: A music player for the server you already run.
+app_description: >-
+  Yuzic is a free and open source music player for Navidrome, Jellyfin, Emby
+  and other Subsonic servers — with its own audio engine, crossfade, a
+  ten-band equalizer and offline downloads.
 
-appstore_link                             : https://apps.apple.com/us/app/yuzic-navidrome-jellyfin/id6740042497                                          # Automatically populates if not set and if iOS app ID is set. Otherwise enter manually.
-playstore_link                            : https://play.google.com/store/apps/details?id=com.arinora.rawarr                                          # Enter Google Play Store URL.                                     # Enter a link to downloadable file or (e.g. public Dropbox link to a .zip file). 
-                                                                                      # Or upload your press kit file to assets and set path accordingly (e.g. "assets/your_press_kit.zip").
+# Store and source
+ios_app_id: 6740042497
+ios_app_country: us
+appstore_link: https://apps.apple.com/us/app/yuzic-navidrome-jellyfin/id6740042497
+playstore_link: https://play.google.com/store/apps/details?id=com.arinora.rawarr
+github_repo_url: https://github.com/yuzicapp/yuzic
+discord_link: https://discord.gg/NzsGEhg5Fs
 
-app_icon                                  : assets/appicon.png                      # Automatically populates if not set and if iOS app ID is set.  Otherwise enter path to icon file manually.
-app_name                                  : Yuzic                                          # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_price                                 :                                           # Automatically populates if not set and if iOS app ID is set.  Otherwise enter manually.
-app_description                           : Yuzic is a cross-platform, free and open source music player for Navidrome or other Subsonic servers, plus Jellyfin. Powered by React Native.
+enable_smart_app_banner: true
 
-enable_smart_app_banner                   : true                                      # Set to true to show a smart app banner at top of page on mobile devices.
-
-
-
-# Information About Yourself
-your_name                                 : Zachary Starnes                              
-your_link                                 : https://www.aritools.xyz/                                                
-email_address                             : zackhhi@gmail.com                                       
-github_username                           : yuzicapp
-
-
-
-# Feature List                            Edit, add or remove features to be presented.
-features                                  :
-
-  - title                                 : Unified Music Library Across Servers
-    description                           : Yuzic connects to Navidrome, Jellyfin, Emby, and other Subsonic servers, merging albums, artists, playlists, and tracks into a single library.
-    fontawesome_icon_name                 : desktop
-
-  - title                                 : Its Own Audio Engine
-    description                           : Playback is built on an audio graph written for Yuzic, not a stock player. That is what makes everything below expressible at all.
-    fontawesome_icon_name                 : microchip
-
-  - title                                 : Crossfade &amp; Gapless
-    description                           : Fade one track into the next, with a gapless-aware mode that leaves a segued album to play through its own joins untouched.
-    fontawesome_icon_name                 : exchange-alt
-
-  - title                                 : Ten-Band Equalizer &amp; Replay Gain
-    description                           : Shape the sound to the room you are in, and even out volume across a library with album and track gain modes.
-    fontawesome_icon_name                 : sliders-h
-
-  - title                                 : Offline &amp; Download Support
-    description                           : Download songs, albums, and playlists for later, follow them on one Downloads screen, and have new songs arrive automatically. Edits you make offline replay when you are back.
-    fontawesome_icon_name                 : download
-
-  - title                                 : In the Car, and on the Lock Screen
-    description                           : CarPlay and Android Auto play the quality you actually chose, and the lock screen and media controls stay in step with the app.
-    fontawesome_icon_name                 : car
-
-  - title                                 : Customizable UI &amp; Layout
-    description                           : Light, dark, or system, an accent colour, artwork-tinted screens, and scales you can move yourself — corner radius, list density, glyph size, and column count.
-    fontawesome_icon_name                 : paint-roller
-
-  - title                                 : A pretty UI
-    description                           : Yuzic is designed to be clean and minimal. Simplicity is key.
-    fontawesome_icon_name                 : mobile
-
-  - title                                 : Search &amp; Browsing
-    description                           : Quickly find songs, albums, artists, or playlists, even in large libraries, with sortable collections and genres throughout.
-    fontawesome_icon_name                 : list
-
-  - title                                 : Reaches Everyone
-    description                           : Screen reader labels on every control you can reach, text that scales with your system size, and an interface in English, French, Japanese, and Chinese.
-    fontawesome_icon_name                 : universal-access
-
-  - title                                 : Privacy-First by Design
-    description                           : No ads, no tracking by default, no data selling. Every outside service stays off until you turn it on.
-    fontawesome_icon_name                 : lock
-
-  - title                                 : Plugins
-    description                           : Connect to other services to expand the capabilities of the app.
-    fontawesome_icon_name                 : plug
+# Author
+your_name: Zachary Starnes
+your_link: https://www.aritools.xyz/
+email_address: zackhhi@gmail.com
+github_username: yuzicapp
 
 
+# Feature List — what the app does, in the app's own terms.
+features:
 
-# Theme Settings
-topbar_color                              : "#000000"
-topbar_transparency                       : 0.1
-topbar_title_color                        : "#ffffff"
+  - title: Unified library across servers
+    description: >-
+      Connect Navidrome, Jellyfin, Emby and other Subsonic servers. Albums,
+      artists, playlists and tracks merge into one library, scoped per server.
 
-cover_image                               : assets/headerimage.png                    # Replace with alternative image path or image URL.
-cover_overlay_color                       : "#363b3d"
-cover_overlay_transparency                : 0.8
+  - title: Its own audio engine
+    description: >-
+      Playback is built on an audio graph written for Yuzic rather than a
+      stock player, which is what makes everything below expressible at all.
 
-device_color                              : black                                     # Set to: blue, black, yellow, coral or white.
+  - title: Crossfade and gapless
+    description: >-
+      Fade one track into the next, with a gapless-aware mode that leaves a
+      segued album to play through its own joins untouched.
 
-body_background_color                     : "#ffffff"
+  - title: Ten-band equalizer
+    description: >-
+      Shape the sound to the room you are in, with replay gain to even out
+      volume across a library in album or track mode.
 
-link_color                                : "#1d63ea"
+  - title: Offline and downloads
+    description: >-
+      Download songs, albums and playlists, follow them on one Downloads
+      screen, and have new songs arrive automatically. Edits made offline
+      replay when you are back.
 
-app_title_color                           : "#ffffff"
-app_price_color                           : "#ffffff"
-app_description_color                     : "#ffffff"
+  - title: In the car
+    description: >-
+      CarPlay and Android Auto play the quality you actually chose, and the
+      lock screen stays in step with the app.
 
-feature_title_color                       : "#000000"
-feature_text_color                        : "#666666"
+  - title: Yours to arrange
+    description: >-
+      Light, dark or system, an accent colour, artwork-tinted screens, and
+      scales you can move — corner radius, list density, glyph size, columns.
 
-feature_icons_foreground_color            : "#ff7f7f"
-feature_icons_background_color            : "#e6e6e6"
+  - title: Reaches everyone
+    description: >-
+      Screen reader labels on every control, text that scales with your system
+      size, and an interface in English, French, Japanese and Chinese.
 
-social_icons_foreground_color             : "#666666"
-social_icons_background_color             : "#e6e6e6"
-
-footer_text_color                         : "#666666"
-
-
-
-
-
-
-
+  - title: Privacy-first by design
+    description: >-
+      No ads, no tracking, nothing sold. Every outside service stays off until
+      you turn it on.
 
 
+# Servers, integrations and downloaders the app speaks to.
+works_with:
+  - Navidrome
+  - Jellyfin
+  - Emby
+  - Subsonic
+  - Last.fm
+  - ListenBrainz
+  - MusicBrainz
+  - Deezer
+  - AudioMuse-AI
+  - Lidarr
+  - slskd
+  - SoulSync
+  - DLNA / UPnP
+  - AirPlay
 
 
+# Screenshots. Empty until there are current ones — the site showed a single
+# shot from January of an app that has changed since.
+screenshots: []
 
 
 ####################################################
 ### Jekyll Configuration. No need to touch this. ###
 ####################################################
 
-# Set the Sass partials directory, as we're using @imports
 sass:
-  style: :compressed # You might prefer to minify using :compressed
+  style: compressed
 
-# Exclude these files from your production _site
 exclude:
   - LICENSE
   - README.md
@@ -140,5 +121,4 @@ collections:
     output: true
     permalink: /:path/
 
-# Markdown rendering
 markdown: kramdown

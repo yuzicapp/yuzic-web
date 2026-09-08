@@ -1,3 +1,94 @@
 ---
 layout: default
 ---
+
+<section class="hero">
+  <div class="wrap hero__inner">
+    <img class="hero__icon" src="{{ '/assets/appicon.png' | relative_url }}" alt="{{ site.app_name }} app icon">
+    <h1 class="hero__title">{{ site.tagline }}</h1>
+    <p class="hero__lede">{{ site.app_description }}</p>
+
+    <div class="store-row">
+      <a class="store-btn store-btn--primary" href="{{ site.appstore_link }}">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.5 12.6c0-2.3 1.9-3.4 2-3.5-1.1-1.6-2.8-1.8-3.4-1.8-1.4-.1-2.8.9-3.5.9s-1.8-.9-3-.8c-1.5 0-2.9.9-3.7 2.3-1.6 2.7-.4 6.8 1.1 9 .8 1.1 1.6 2.3 2.8 2.2 1.1 0 1.6-.7 2.9-.7s1.7.7 2.9.7 2-1.1 2.7-2.1c.9-1.2 1.2-2.4 1.2-2.4s-2.3-.9-2.3-3.5zM14.3 5.3c.6-.8 1-1.8.9-2.9-.9 0-2 .6-2.7 1.4-.6.7-1.1 1.8-.9 2.8 1 .1 2-.5 2.7-1.3z"/></svg>
+        App Store
+      </a>
+      <a class="store-btn" href="{{ site.playstore_link }}">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.6 2.3c-.3.3-.5.8-.5 1.4v16.6c0 .6.2 1.1.5 1.4l.1.1 9.3-9.3v-.2L3.6 2.3zM17 15.3l-3.1-3.1 3.1-3.1 3.7 2.1c1.1.6 1.1 1.6 0 2.2L17 15.3zM13.9 12.2l-9.3 9.3c.4.4 1 .4 1.7 0l10.7-6.1-3.1-3.2zM13.9 11.8l3.1-3.1L6.3 2.6c-.7-.4-1.3-.4-1.7 0l9.3 9.2z"/></svg>
+        Google Play
+      </a>
+      <a class="store-btn" href="{{ site.github_repo_url }}">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.5 2 2 6.6 2 12.3c0 4.5 2.9 8.4 6.8 9.7.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.4-3.4-1.4-.4-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.2-4.6-5.2 0-1.1.4-2 1-2.8-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.7 1.1a9 9 0 0 1 5 0c1.9-1.4 2.7-1.1 2.7-1.1.5 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 4-2.4 4.9-4.6 5.2.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.3 10.3 0 0 0 22 12.3C22 6.6 17.5 2 12 2z"/></svg>
+        Source
+      </a>
+    </div>
+
+    <p class="hero__note">Free and open source · GPL-3.0 · Bring your own server</p>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="wrap">
+    <p class="section__label">What it does</p>
+    <h2 class="section__title">Your server, played properly</h2>
+    <p class="section__lede">
+      Yuzic connects to the music server you already run and gets out of the
+      way. Every outside service is off until you turn it on.
+    </p>
+
+    <div class="feature-grid">
+      {% for feature in site.features %}{% if feature.title %}
+      <div class="feature">
+        <h3 class="feature__title">{{ feature.title }}</h3>
+        <p class="feature__body">{{ feature.description }}</p>
+      </div>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>
+
+{% if site.screenshots and site.screenshots.size > 0 %}
+<section class="section" id="screenshots">
+  <div class="wrap">
+    <p class="section__label">A look</p>
+    <h2 class="section__title">Clean, and out of the way</h2>
+    <div class="shots">
+      {% for shot in site.screenshots %}
+      <img class="shot" src="{{ shot.src | relative_url }}" alt="{{ shot.alt }}" loading="lazy">
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}
+
+<section class="section" id="servers">
+  <div class="wrap">
+    <p class="section__label">Works with</p>
+    <h2 class="section__title">Servers, integrations and downloaders</h2>
+    <p class="section__lede">
+      Yuzic needs a server you host. It speaks to these, and connects to the
+      rest only when you ask it to.
+    </p>
+    <div class="chip-row">
+      {% for item in site.works_with %}
+      <span class="chip">{{ item }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" id="get">
+  <div class="wrap">
+    <p class="section__label">Get it</p>
+    <h2 class="section__title">Install {{ site.app_name }}</h2>
+    <p class="section__lede">
+      On the App Store and Google Play. The source is on GitHub, and so is
+      everything that goes into a release.
+    </p>
+    <div class="store-row" style="margin-top: var(--space-xl)">
+      <a class="store-btn store-btn--primary" href="{{ site.appstore_link }}">App Store</a>
+      <a class="store-btn" href="{{ site.playstore_link }}">Google Play</a>
+      <a class="store-btn" href="{{ '/changelog/' | relative_url }}">What's new</a>
+    </div>
+  </div>
+</section>
