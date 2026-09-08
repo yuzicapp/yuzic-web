@@ -29,12 +29,7 @@ layout: default
 
 <section class="section" id="features">
   <div class="wrap">
-    <p class="section__label">What it does</p>
-    <h2 class="section__title">Your server, played properly</h2>
-    <p class="section__lede">
-      Yuzic connects to the music server you already run and gets out of the
-      way. Every outside service is off until you turn it on.
-    </p>
+    <h2 class="section__title">What it does</h2>
 
     <div class="feature-grid">
       {% for feature in site.features %}{% if feature.title %}
@@ -50,8 +45,8 @@ layout: default
 {% if site.screenshots and site.screenshots.size > 0 %}
 <section class="section" id="screenshots">
   <div class="wrap">
-    <p class="section__label">A look</p>
-    <h2 class="section__title">Clean, and out of the way</h2>
+    
+    <h2 class="section__title">A look</h2>
     <div class="shots">
       {% for shot in site.screenshots %}
       <img class="shot" src="{{ shot.src | relative_url }}" alt="{{ shot.alt }}" loading="lazy">
@@ -63,12 +58,7 @@ layout: default
 
 <section class="section" id="servers">
   <div class="wrap">
-    <p class="section__label">Works with</p>
-    <h2 class="section__title">Servers, integrations and downloaders</h2>
-    <p class="section__lede">
-      Yuzic needs a server you host. It speaks to these, and connects to the
-      rest only when you ask it to.
-    </p>
+    <h2 class="section__title">Works with</h2>
     <div class="chip-row">
       {% for item in site.works_with %}
       <span class="chip">{{ item }}</span>
@@ -77,18 +67,3 @@ layout: default
   </div>
 </section>
 
-<section class="section" id="get">
-  <div class="wrap">
-    <p class="section__label">Get it</p>
-    <h2 class="section__title">Install {{ site.app_name }}</h2>
-    <p class="section__lede">
-      On the App Store and Google Play. The source is on GitHub, and so is
-      everything that goes into a release.
-    </p>
-    <div class="store-row" style="margin-top: var(--space-xl)">
-      <a class="store-btn store-btn--primary" href="{{ site.appstore_link }}">App Store</a>
-      <a class="store-btn" href="{{ site.playstore_link }}">Google Play</a>
-      <a class="store-btn" href="{{ '/changelog/' | relative_url }}">What's new</a>
-    </div>
-  </div>
-</section>

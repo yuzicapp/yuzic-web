@@ -10,9 +10,8 @@
 app_name: Yuzic
 tagline: A music player for the server you already run.
 app_description: >-
-  Yuzic is a free and open source music player for Navidrome, Jellyfin, Emby
-  and other Subsonic servers — with its own audio engine, crossfade, a
-  ten-band equalizer and offline downloads.
+  A free and open source music player for Navidrome, Jellyfin, Emby and other
+  Subsonic servers.
 
 # Store and source
 ios_app_id: 6740042497
@@ -34,51 +33,32 @@ github_username: yuzicapp
 # Feature List — what the app does, in the app's own terms.
 features:
 
-  - title: Unified library across servers
-    description: >-
-      Connect Navidrome, Jellyfin, Emby and other Subsonic servers. Albums,
-      artists, playlists and tracks merge into one library, scoped per server.
+  - title: One library, many servers
+    description: Navidrome, Jellyfin, Emby and Subsonic, merged.
 
   - title: Its own audio engine
-    description: >-
-      Playback is built on an audio graph written for Yuzic rather than a
-      stock player, which is what makes everything below expressible at all.
+    description: An audio graph built for Yuzic, not a stock player.
 
   - title: Crossfade and gapless
-    description: >-
-      Fade one track into the next, with a gapless-aware mode that leaves a
-      segued album to play through its own joins untouched.
+    description: With a mode that leaves segued albums alone.
 
   - title: Ten-band equalizer
-    description: >-
-      Shape the sound to the room you are in, with replay gain to even out
-      volume across a library in album or track mode.
+    description: Plus replay gain, album or track.
 
-  - title: Offline and downloads
-    description: >-
-      Download songs, albums and playlists, follow them on one Downloads
-      screen, and have new songs arrive automatically. Edits made offline
-      replay when you are back.
+  - title: Offline downloads
+    description: Whole albums and playlists, with progress you can watch.
 
-  - title: In the car
-    description: >-
-      CarPlay and Android Auto play the quality you actually chose, and the
-      lock screen stays in step with the app.
+  - title: CarPlay and Android Auto
+    description: At the quality you actually chose.
 
   - title: Yours to arrange
-    description: >-
-      Light, dark or system, an accent colour, artwork-tinted screens, and
-      scales you can move — corner radius, list density, glyph size, columns.
+    description: Themes, accent colour, density, corners, columns.
 
   - title: Reaches everyone
-    description: >-
-      Screen reader labels on every control, text that scales with your system
-      size, and an interface in English, French, Japanese and Chinese.
+    description: Screen reader labels throughout. Four languages.
 
-  - title: Privacy-first by design
-    description: >-
-      No ads, no tracking, nothing sold. Every outside service stays off until
-      you turn it on.
+  - title: Privacy-first
+    description: No ads, no tracking. Every service off until you turn it on.
 
 
 # Servers, integrations and downloaders the app speaks to.
