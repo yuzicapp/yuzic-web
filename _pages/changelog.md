@@ -9,6 +9,18 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.1.0**
+A server that asks the client to prove who it is can now be reached from iOS, and a stream that breaks part-way is picked back up instead of losing the track.
+
+#### Servers
+- **Client certificates (iOS)** — import the PKCS#12 file (`.p12`/`.pfx`) your server issued you, under Settings → Server. Yuzic presents it for the whole conversation with your server: signing in, browsing, artwork and the audio itself. For a Navidrome, Jellyfin or Emby behind a reverse proxy doing mutual TLS
+- The certificate is kept in the device keychain, and is presented only to your own server — never to Deezer, Last.fm or anything else Yuzic talks to
+- Android does not support client certificates yet; the setting says so rather than failing to connect
+
+#### Playback
+- A transcoded stream that breaks part-way is picked back up, instead of the track ending there
+- Playback recovers in cases where it used to stop and stay stopped
+
 # **Version 2.0.2**
 More of the same fault, found properly this time: a stalled stream that never reported anything at all.
 
