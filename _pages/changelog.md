@@ -9,6 +9,22 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.2.1**
+Reach the next track without looking, and a playback speed that stays where you put it. Podcasts get the two things they were missing: their own speed, and a place in Continue Playing.
+
+#### Playback
+- **Swipe the cover art** on the player to move to the next or previous track — the gesture the artwork always looked like it should have
+- **Playback speed is remembered per kind of listening.** One speed for music, another for anything spoken, each kept across restarts. It used to be a single number that reset to 1× on every launch and followed you out of a podcast into the next song
+- **Continue Playing can resume a podcast episode.** It joins what you were listening to against your synced library, and an episode is never in that library — so the bookmark existed with nothing able to draw it
+
+#### Downloads
+- **Every download button now behaves the same way.** Album, playlist, genre and artist had drifted into three different behaviours — two showed a spinner where the progress was actually measurable, and three finished with a bare tick while the album screen alone celebrated. One control now owns all three states everywhere
+- **Fixed downloads that could stop silently.** When the system service behind background transfers was unreachable, every track failed at once and the button simply went back to a download arrow — no error, no spinner, indistinguishable from a tap that never registered. Yuzic now finishes the download in the foreground instead
+- A download that does give up says which track it was, and that it stays queued
+
+#### Fixes
+- The version line in Settings, and the last row of the offline downloads list, no longer sit behind the tab bar when the translucent dock is on
+
 # **Version 2.1.1**
 Yuzic stays useful when your server isn't there. Searching, browsing and the surfaces that need a server all say what they can and can't do, instead of hanging or looking broken.
 
