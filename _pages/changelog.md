@@ -9,13 +9,30 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.1.1**
+Yuzic stays useful when your server isn't there. Searching, browsing and the surfaces that need a server all say what they can and can't do, instead of hanging or looking broken.
+
+#### Offline
+- **Searching offline returns your library.** It used to return nothing: the search asked your server, waited for a request that could never arrive, and then reported an error over results it already had
+- Every keystroke no longer starts a request that can only time out, so search stays responsive with the server unreachable
+- Deezer results still come through when it's only your own server that's away — a VPN being down doesn't mean the internet is
+- Radio, podcasts and shares say they aren't available offline, rather than spinning and then failing to load
+- The library says it's showing your synced copy and downloads
+
+#### Servers
+- **Client certificates now work on Android**, not only iOS. Import the PKCS#12 file (`.p12`/`.pfx`) your server issued you, under Settings → Server
+
+#### Playback
+- The lock screen, notification and car display no longer show the previous track after a crossfade — they now follow what's actually playing
+- A seek inside a transcoded stream no longer ends the track
+
 # **Version 2.1.0**
 A server that asks the client to prove who it is can now be reached from iOS, and a stream that breaks part-way is picked back up instead of losing the track.
 
 #### Servers
 - **Client certificates (iOS)** — import the PKCS#12 file (`.p12`/`.pfx`) your server issued you, under Settings → Server. Yuzic presents it for the whole conversation with your server: signing in, browsing, artwork and the audio itself. For a Navidrome, Jellyfin or Emby behind a reverse proxy doing mutual TLS
 - The certificate is kept in the device keychain, and is presented only to your own server — never to Deezer, Last.fm or anything else Yuzic talks to
-- Android does not support client certificates yet; the setting says so rather than failing to connect
+- Android does not support client certificates yet; the setting says so rather than failing to connect *(added in 2.1.1)*
 
 #### Playback
 - A transcoded stream that breaks part-way is picked back up, instead of the track ending there
