@@ -9,6 +9,20 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.3.0**
+Yuzic now plays from Plex, keeps working behind an authenticating reverse proxy, and lets you add local files whenever you like — plus a fix for signing in to the newest Jellyfin.
+
+#### Servers
+- **Plex is now a supported music server.** Browse and play your Plex library alongside Navidrome, Jellyfin, and Emby
+- **Servers behind a Basic-auth reverse proxy work end to end.** The audio stream and the artwork both carry the authentication your proxy expects, so lock-screen and Now Playing covers load instead of failing quietly
+- Plex libraries come through complete — albums, tracks, and playlists page correctly instead of stopping at the first batch
+
+#### Local files
+- **Import local audio any time.** Adding music from this device is no longer a one-time step during setup — it lives in Settings → Library
+
+#### Fixes
+- **Signing in to Jellyfin 12 works again.** The newest Jellyfin rejected a login that did not name the app; Yuzic now identifies itself and connects
+
 # **Version 2.2.2**
 Yuzic now plays FLAC streams at their original quality on iOS, shows the picture attached to your account, and is more dependable in the moments between tracks.
 
