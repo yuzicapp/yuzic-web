@@ -9,6 +9,19 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.2.2**
+Yuzic now plays FLAC streams at their original quality on iOS, shows the picture attached to your account, and is more dependable in the moments between tracks.
+
+#### Playback
+- **Original-quality FLAC on iOS.** FLAC streams no longer need to be transcoded before they reach the player
+- A player drag that was interrupted can no longer leave the mini player invisible
+
+#### Your account
+- **Your account picture now appears throughout the app.** Navidrome, Jellyfin, and Emby avatars replace the initial-in-a-disc where the server provides one
+
+#### Project
+- The README is simpler, with a refreshed gallery generated from the same app captures used for the store listing
+
 # **Version 2.2.1**
 Reach the next track without looking, and a playback speed that stays where you put it. Podcasts get the two things they were missing: their own speed, and a place in Continue Playing.
 
