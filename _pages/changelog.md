@@ -9,6 +9,44 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.4.0**
+Yuzic is rebuilt from the inside for a steadier app, and brings playlist editing, podcasts that keep up, and more of each server's own features.
+
+#### Playlists
+- **Edit a playlist's songs.** Remove songs and drag to reorder them, on Plex too
+- **Recently Played shows your playlists again.** Playlists you play, shuffle, or pick back up after reopening the app now appear on Home
+- Jellyfin playlists say who may change them
+
+#### Podcasts
+- **Podcasts show their latest episodes,** and downloaded episodes can be deleted
+- An episode stops spinning once its download finishes
+
+#### Playback
+- **The sleep timer lives in a track's options,** and can stop at the end of the track
+- Yuzic follows a queue your car started instead of fighting it
+- The volume slider sets the server's volume while the server is playing
+- Playback resumes exactly where it paused
+
+#### Servers
+- **Home shelves from Jellyfin, Emby, and Plex,** not just Navidrome
+- **Plex has lyrics and similar tracks**
+- Shared links can be renamed and have their expiry changed
+- Onboarding checks the server address before asking for a password
+
+#### Library and discovery
+- **One Downloads screen** for offline files and downloader queues, and Get offers to connect a downloader when none is set up
+- Outside sources are organised by purpose — Metadata, Pages, Search, and Home — and discovery stays off until you turn it on
+- **One rule for every picture.** Artist and album images come from your server first, with Cover Art Archive and Deezer as backups, so similar artists and ListenBrainz mixes get covers too
+- Every server's genres show, and imported local files have genres
+- slskd is named consistently: slskd for your server, Soulseek for the network
+
+#### Fixes
+- A crash takes down only the screen it happened on, not the whole app
+- A cold start no longer leaves the library empty
+- Favouriting an album works offline
+- A failing server lyrics lookup no longer hides LRCLIB's lyrics
+- Android back closes the open sheet instead of navigating underneath it
+
 # **Version 2.3.0**
 Yuzic now plays from Plex, keeps working behind an authenticating reverse proxy, and lets you add local files whenever you like — plus a fix for signing in to the newest Jellyfin.
 
