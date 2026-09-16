@@ -9,6 +9,52 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.6.0**
+New music finds its way in on its own, radio gets real artwork, and playlists can finally count.
+
+#### Library
+- **Music you add to your server shows up by itself.** New albums and songs stayed invisible until you opened Settings and pressed refresh — the app kept reading its own saved copy of your library instead of ever asking the server again
+- **Playlists say how many songs they hold** instead of "0 songs"
+
+#### Radio
+- **Stations show their logo** — in the list, the player, the playing bar and CarPlay — instead of a broken-image icon
+- Where no directory has a logo, the Yuzic mark is drawn instead
+- Radio gets sorting and a grid view, which earn their place now a station can have a picture
+
+#### Wants and Downloads
+- **Wants gets sorting, filtering and a grid,** the same controls the library has
+- **Downloads gets its own menu,** with a refresh that really re-reads your transfers
+- Menus and pickers open every time you tap them, and close again when you pick something
+
+#### Fixes
+- Similar artists show at a glance which are in your library and which are on your server
+
+# **Version 2.5.0**
+Radio that plays, a wishlist worth keeping, and the same options on every screen.
+
+#### Radio
+- **Internet radio plays.** Live streams have their own reader now, reconnect after a dropout, and stop buffering while paused
+- **Stations keep their homepage,** instead of the edit form opening blank and saving that blank over your value
+
+#### Wants
+- **Wants does something now.** Rows show real artwork, open the album or artist they came from, and carry the same ⋯ menu as everywhere else
+- **Get, when you ask for it.** With a downloader connected, a want can be sent to it and shows its progress. Wanting something never starts a download by itself
+- **Want an artist**, not just an album
+
+#### Playback
+- **Songs no longer stall at their end**
+- **Music comes back after an interruption** — a call, Siri, an alarm, or another app taking the audio
+- **Track changes are smoother**
+
+#### Everywhere
+- **One ⋯ on every screen,** instead of loose icons and screens with no options at all
+- **Your own copy plays first.** A track you already own opens as your full copy instead of a 30-second preview
+- **Every sheet is the same sheet** — one background, handle and sizing
+
+#### Polish
+- The splash screen is the greyed mark on black again
+- The sleep timer moved into the player's sheet, with a chip while one is running
+
 # **Version 2.4.0**
 Yuzic is rebuilt from the inside for a steadier app, and brings playlist editing, podcasts that keep up, and more of each server's own features.
 
