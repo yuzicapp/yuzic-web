@@ -9,6 +9,23 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.6.4**
+The app starts paying attention to what you actually listen to.
+
+#### Listening
+- **Yuzic learns from what you play.** A play count is one number that only goes up, and it cannot tell a song you love from one you skip every time it comes on. The app now records what actually happened when a track played — whether it finished, you skipped it, or the connection dropped — and that is what shapes what it plays next
+- **A dropped connection is not a dislike.** A track cut short by a bad stream used to be indistinguishable from one you rejected. It no longer counts against the song
+- **It stays quiet until it knows something.** Nothing gets reordered on the strength of a handful of plays. What the app has learned is applied gradually, and only once there is enough of it to mean anything
+- **Your existing play counts carry over** — the years of listening already recorded do not start again from zero
+
+#### Listening stats
+- **See what you have actually been listening to,** in Settings under Listening: how much you have played, your longest run of consecutive listening days, how much of a track you tend to finish, and when you first heard the things you play most
+
+#### Everywhere else
+- **Autoplay, shuffle and what plays next now share one understanding of your taste.** Each of them used to guess on its own, from a different fragment of the same history
+- **Shuffle leans toward what you like** without becoming predictable — still genuinely shuffled, weighted rather than sorted
+- **Set aside** on Home brings back albums you used to play often and have not returned to in a while
+
 # **Version 2.6.3**
 Music that does not cut out, Jellyfin sign-in that works again, and artwork that lands where it is going.
 
