@@ -9,6 +9,37 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.7.0**
+Rate what you play, and turn the phone on its side.
+
+#### Ratings
+- **Five stars, wherever your server keeps them.** Under the title on the player, in the song and album options, and as a Rating order in your library's sort sheet. Tapping the star already set clears the rating, which is the only way to take one off
+- **A rating is not a favourite.** A favourite says keep this where I can find it — it builds the Favourites playlist, shows up in CarPlay and survives being offline. A rating says how much you like it. They now sit next to each other rather than one standing in for the other
+- **Filter out what you don't like.** With a Rating sort order, the one-star tracks are a tap away from the top or the bottom of every list
+- **Your rating shows straight away** and stays put until your server's own answer comes back, so it never flickers back to what it was
+- Ratings appear on Navidrome and other Subsonic servers. Jellyfin and Emby keep likes rather than a star count, and on Plex a favourite *is* a rating — three stars there would quietly unfavourite the track — so the star row, the sort order and the setting all stay hidden rather than half working
+
+#### Every screen size
+- **The app lays itself out for the window it is in.** Landscape, an iPad in Split View and a half-open foldable are each just a window, and each now gets a layout rather than a portrait one stretched to fit
+- **The player has a second shape** for a screen on its side, instead of pushing its own controls off the bottom
+- **A wider window shows more artwork, not bigger artwork.** Lists of rows stop at a readable width and centre, because a row is the one shape that gets worse the wider it gets — at full iPad width a track had its title against one edge and its duration against the other
+- **Nothing moved on a phone.** Every size is the one the app already drew at phone widths
+- **Both onboarding forms scroll** once they no longer fit, which is what a phone on its side with the keyboard up looks like
+
+#### Downloads and wants
+- **Get and Want are on the screen you found the music on.** A browsed album screen has always had a Get button; a browsed artist screen had nothing but a `⋯`. Both now carry Get, with Want beside it
+- **Asking for an artist works from the artist.** It used to mean wanting them, walking to Library › Wants, finding them again, and opening a menu on the row — and tapping the row itself took you back to the artist screen, which was the one place with nothing to press
+- **Asking for an artist saves the want too,** so the Wants screen can show you what came of it. Wanting still starts nothing on its own
+- **Sending an album to a downloader no longer traps you in the sheet.** It closes when you confirm, and the request reports itself as it goes — including a running count of songs for a downloader that has to ask for them one at a time. A failure used to leave you sitting in a sheet you could not swipe away
+- **Following an artist now asks what to watch, and then goes looking.** It gets the same kind of review an album already had: which service, which quality profile, which of the artist's albums to watch, and whether to start searching straight away. It used to go straight out under a fixed policy you never saw, which is why it could never be asked to search at all
+- **Following an artist Lidarr already knew now works.** If the artist was in your Lidarr library but not being watched, the request reported success and changed nothing at all
+- Following an artist needs Lidarr, the only downloader that watches for new releases. Without it, the button offers to connect one rather than doing nothing
+
+#### Everywhere else
+- **Home says when it is offline,** the way Library and Search already did. It is the screen with the most to lose when the server is out of reach, since every discovery shelf is a request
+- **Screen readers name controls they used to skip** — every row and tile in the library, the switches throughout settings, and the artist on every track and search result, which used to be announced by title alone
+- **The radius and density pickers say which one you are on** to a screen reader, rather than reading as three unchosen options
+
 # **Version 2.6.4**
 The app starts paying attention to what you actually listen to.
 
