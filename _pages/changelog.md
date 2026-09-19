@@ -9,6 +9,29 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.6.3**
+Music that does not cut out, Jellyfin sign-in that works again, and artwork that lands where it is going.
+
+#### Playback
+- **Streaming stopped cutting out.** The only thing between you and your connection was two seconds of decoded audio, and nothing fetched ahead of it — so a round trip fell due about every two seconds of playback, with two seconds to cover it. Fine against a server on the same desk, no margin at all for a phone at the edge of a room, which is why it was heard on WiFi as much as on mobile data. The app now keeps around thirty seconds fetched ahead
+- **High-resolution music had the least room, not the most.** The buffer was measured in samples rather than seconds, so the files with the most to download had the least time to download it in
+- **Silence is reported instead of played.** A connection that goes slow without going wrong used to leave the player claiming to play while nothing came out; it shows buffering now
+
+#### Signing in
+- **Jellyfin sign-in works again.** Jellyfin 12 changed which header carries the app's identity and switches the old one off when you upgrade, so sign-in was refused before your password was ever read. It looked like a wrong password and was not one, and no older version of the app got around it
+- A Jellyfin 12 behind a reverse proxy with its own password needs `EnableLegacyAuthorization` turned back on — there is only one place to put credentials and the proxy is using it
+
+#### The player
+- **Cover art settles without a late jump.** The artwork was measured while the opening animation was still moving at full speed, so it was placed slightly wrong and then visibly corrected a moment later
+- **The player opens the same way every time,** including the first time in a session
+- **Covers you can swipe** reach the edges of the row they sit in
+
+#### Downloaders
+- **A cancelled Lidarr download says cancelled,** not failed
+- **A connection that fails says why**
+- Addresses and keys are trimmed, so a stray space pasted along with them no longer breaks the connection
+- The Home banner names only the downloaders it is actually counting
+
 # **Version 2.6.0**
 New music finds its way in on its own, radio gets real artwork, and playlists can finally count.
 
