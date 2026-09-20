@@ -9,6 +9,26 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.7.1**
+Songs that play to the end, and servers that hear about it.
+
+#### Playback
+- **Tracks stopped cutting out part-way through.** Two faults in the audio engine with one symptom, and neither threw anything — a read that comes back empty is how the engine says a track finished, so a song simply stopped and the next one started. The disk cache was filed under the track rather than under the audio it actually held, so cached bytes from one quality could be handed to a decoder reading another; and the reader stopped at the file's stated length, which for a VBR MP3 with no Xing header is an estimate from the opening seconds rather than a count
+- **Seeking near the end of a track no longer ends it.** The same estimate bounded seeking, so dragging to 2:50 of a track the app believed was 2:40 long landed at 2:40 and moved on
+- **A track cut short is no longer treated as one that finished,** on Android as well as iOS
+
+#### Your server
+- **Plex records what you play.** Every playback call was missing the parameter naming the library a track belongs to, and Plex answers a call it cannot act on with a success and an empty reply — so nothing was recorded and nothing said so
+- **Starring a track on Plex works.** Same cause. A Plex favourite is stored as a rating, and the write was discarded while the favourites list was read back by looking for exactly that rating — broken in both directions, for as long as the feature has existed
+- **Jellyfin is told when you pause, and when you stop.** A track skipped before it counted as played left the session open, still showing you as playing. Jellyfin's own scrobbling plugins listen for the stop, so they were missing those listens too
+- **A listen is no longer dated 1970** on Navidrome and other Subsonic servers when the app could not say when it started
+- **Very short tracks are no longer submitted** — anything under 30 seconds is refused by Last.fm and ListenBrainz anyway. Your own history still records it
+- **A track playing when the app is killed is no longer lost,** saved on backgrounding and reported next launch
+
+#### Elsewhere
+- **Landscape is for tablets again.** 2.7.0 let phones rotate, and a phone on its side leaves very little room once a keyboard is up. iPads, Android tablets and unfolded foldables still rotate, and Split View still works
+- **Removing a server removes what it left behind** — its listening history, ratings, wants, search history and download settings were only becoming invisible before
+
 # **Version 2.7.0**
 Rate what you play, and turn the phone on its side.
 
