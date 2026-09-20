@@ -61,33 +61,35 @@ features:
     description: No ads, no tracking. Every service off until you turn it on.
 
 
-# The two repositories. The engine is its own project with its own licence,
-# and the site should say so rather than folding it into the app.
+# The repositories, named as they are on GitHub. The engine is its own project
+# with its own licence, and the site should say so rather than folding it into
+# the app.
 projects:
-  - name: Yuzic
+  - name: yuzic
     description: The app. React Native, GPL-3.0.
     url: https://github.com/yuzicapp/yuzic
   - name: yuzic-engine
     description: The audio engine underneath it. Swift and Kotlin, Apache-2.0.
     url: https://github.com/yuzicapp/yuzic-engine
+  - name: yuzic-web
+    description: This site. Jekyll, GPL-3.0.
+    url: https://github.com/yuzicapp/yuzic-web
 
 
-# Servers, integrations and downloaders the app speaks to.
+# Everything the app speaks to, grouped by what it is for. It was one flat row
+# of fourteen chips, which put a music server and an audio output next to each
+# other and left the reader to work out which was which.
 works_with:
-  - Navidrome
-  - Jellyfin
-  - Emby
-  - Subsonic
-  - Last.fm
-  - ListenBrainz
-  - MusicBrainz
-  - Deezer
-  - AudioMuse-AI
-  - Lidarr
-  - slskd
-  - SoulSync
-  - DLNA / UPnP
-  - AirPlay
+  - group: Servers
+    items: [Navidrome, Jellyfin, Emby, Subsonic]
+  - group: Downloaders
+    items: [Lidarr, slskd, SoulSync]
+  - group: Scrobbling
+    items: [Last.fm, ListenBrainz]
+  - group: Metadata and recommendations
+    items: [MusicBrainz, Deezer, AudioMuse-AI]
+  - group: Play elsewhere
+    items: [AirPlay, DLNA / UPnP]
 
 
 # Screenshots. Empty until there are current ones — the site showed a single

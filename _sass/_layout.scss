@@ -144,7 +144,11 @@
 .store-btn:hover { color: var(--text); background: var(--surface-2); }
 .store-btn--primary { background: var(--accent); color: var(--on-accent); }
 .store-btn--primary:hover { background: var(--accent-strong); color: var(--on-accent); }
-.store-btn svg { width: 18px; height: 18px; }
+.icon {
+  width: 18px;
+  height: 18px;
+  flex: none;
+}
 
 // ── Sections ─────────────────────────────────────────────────────────────────
 //
@@ -209,6 +213,16 @@
   letter-spacing: -0.015em;
 }
 
+// A repository card leads with the mark, so the row reads as a list of things
+// on GitHub before any of the names are taken in.
+.feature__title--icon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.feature--link .icon { color: var(--text-dim); transition: color 140ms ease; }
+.feature--link:hover .icon { color: var(--text); }
+
 .feature__body {
   color: var(--text-dim);
   font-size: 0.925rem;
@@ -244,6 +258,26 @@
   gap: var(--space-sm);
   margin-top: var(--space-lg);
 }
+
+// Grouped, because a flat row of fourteen put a music server and an audio
+// output beside each other and left the reader to sort them out. The label
+// carries the grouping; the chips stay the one shape they already were.
+.works {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-lg);
+}
+
+.works__label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.works__group .chip-row { margin-top: var(--space-sm); }
 
 .chip {
   background: var(--muted);

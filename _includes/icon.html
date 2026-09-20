@@ -1,0 +1,13 @@
+{%- comment -%}
+One brand mark, from `_data/icons.yml`.
+
+  {% include icon.html name="github" %}
+
+Decorative by default: these sit beside their own label ("Source", "GitHub"),
+so a screen reader that also announced the mark would read the same thing
+twice. Pass a `label` only where the icon stands alone.
+{%- endcomment -%}
+<svg class="icon" viewBox="0 0 24 24" fill="currentColor"
+     {% if include.label %}role="img" aria-label="{{ include.label }}"{% else %}aria-hidden="true" focusable="false"{% endif %}>
+  <path d="{{ site.data.icons[include.name] }}"/>
+</svg>
