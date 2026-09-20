@@ -76,20 +76,15 @@ projects:
     url: https://github.com/yuzicapp/yuzic-web
 
 
-# Everything the app speaks to, grouped by what it is for. It was one flat row
-# of fourteen chips, which put a music server and an audio output next to each
-# other and left the reader to work out which was which.
+# Three groups, the same three the app's own docs use. Anything that is not a
+# server you connect or a downloader you send to is an integration.
 works_with:
   - group: Servers
     items: [Navidrome, Jellyfin, Emby, Subsonic]
+  - group: Integrations
+    items: [Last.fm, ListenBrainz, MusicBrainz, Deezer, AudioMuse-AI, AirPlay, DLNA / UPnP]
   - group: Downloaders
     items: [Lidarr, slskd, SoulSync]
-  - group: Scrobbling
-    items: [Last.fm, ListenBrainz]
-  - group: Metadata and recommendations
-    items: [MusicBrainz, Deezer, AudioMuse-AI]
-  - group: Play elsewhere
-    items: [AirPlay, DLNA / UPnP]
 
 
 # Screenshots. Empty until there are current ones — the site showed a single
