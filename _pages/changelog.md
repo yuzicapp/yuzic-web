@@ -9,6 +9,19 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.7.2**
+
+#### Signing in to Plex
+- Plex sign-in works. It could not be completed at all before
+- The code is now four characters, which is what plex.tv/link accepts. It was 25 characters, with nowhere to enter it
+- The screen names plex.tv/link
+- Each server type shows its own port in the address hint. Plex's was showing Navidrome's
+
+#### When sign-in fails
+- Approving a code is no longer reported as the code expiring
+- The app says whether the server refused your account or could not be reached
+- Jellyfin Quick Connect had the same fault and is fixed too
+
 # **Version 2.7.1**
 
 #### Playback
