@@ -9,6 +9,13 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.8.1**
+
+#### Large libraries
+- Scanning a large Jellyfin library no longer crashes the app. The library was asked for in one request, and past about 50,000 tracks that single response was big enough to run the app out of memory before it could draw anything
+- The library is fetched a page at a time now
+- Sorting a large library no longer rebuilds the whole list first
+
 # **Version 2.8.0**
 
 #### Large libraries
