@@ -9,6 +9,25 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.8.0**
+
+#### Large libraries
+- The app starts and scrolls quickly with a big library. The whole catalog was written to disk again whenever anything changed, and read back in full before the app could draw
+- At 80,000 tracks that was 98 MB every time. Ten second cold starts, and a screen that stopped taking taps, were both this
+
+#### Your server
+- Android reaches a server behind a certificate authority of your own. Android ignores a root you installed yourself unless an app asks it not to, so Caddy's tls internal worked everywhere except here
+- The app says when a certificate was refused, instead of reporting it as an address it could not reach
+- A fallback URL is tried when the first address stops answering. One that timed out used to end the attempt, so a Tailscale address was never reached from outside your network
+
+#### Getting music
+- Downtify can be connected as a downloader, alongside Lidarr, slskd and SoulSync
+- MusicBrainz can point at a mirror you run yourself
+
+#### Elsewhere
+- Tracks in Your Mix play when you tap them. Only the shuffle button worked
+- The last track on the mix screen is no longer hidden behind the playing bar
+
 # **Version 2.7.2**
 
 #### Signing in to Plex
