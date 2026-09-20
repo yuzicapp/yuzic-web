@@ -28,5 +28,7 @@ Then open http://127.0.0.1:4000. It rebuilds as you save.
 
 ## Licence
 
-MIT. Started from [Emil Baehr's app landing page template](https://github.com/emilbaehr/automatic-app-landing-page);
-little of it is left, but the licence stays.
+GPL-3.0, the same as the app.
+
+The repo began as a fork of [an app landing page template](https://github.com/emilbaehr/automatic-app-landing-page),
+which is why the early history is someone else's. None of that code is left.
