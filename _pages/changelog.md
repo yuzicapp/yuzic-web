@@ -9,6 +9,19 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.8.2**
+
+#### Large libraries
+- A library of 90,000 songs no longer crashes the app, whether it is syncing for the first time or opening with the library already on the phone
+- Opening the app reads your library from the phone instead of downloading it all again
+- Opening Tracks on a large library takes about half a second, down from over three. Every name went through a slow text comparison about 1.5 million times; each is now prepared once
+- Much less memory and storage. At 90,000 songs the saved library drops from 512 MB to 128 MB, and the app uses about 50 MB less while it runs
+
+#### Playback
+- A song that will not play is tried once more, then skipped. It used to be retried forever with the processor running flat out, and pausing did not stop it
+- After three songs in a row fail, playback stops and keeps your queue, instead of dropping each one while Autoplay kept adding more
+- On Android, a song that got a login or error page instead of audio, from hotel Wi-Fi or a broken proxy, plays again once the connection is fixed. The page had been saved as the song and was replayed every time
+
 # **Version 2.8.1**
 
 #### Large libraries
