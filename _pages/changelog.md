@@ -9,6 +9,22 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.9.0**
+
+#### In the car
+- CarPlay, Android Auto and Android Automotive show your library as tabs: Recent, Favorites, Playlists, Albums and Downloads
+- Every album and playlist starts with Shuffle
+- Android Auto and Automotive draw albums and playlists as covers, and can search your library and take spoken requests
+- The car works with the app closed. Opening Yuzic from CarPlay alone used to show an empty list
+- Android picks up the last queue when the car or a headset asks to carry on
+- CarPlay lists what is up next, and you can jump to any of it
+
+#### Fixes
+- A favourite song no longer disappears from its album and playlists in the car
+- Offline, the car shows only downloaded songs, and they play from the phone. Every song used to stream, so none played
+- Covers show in the car for servers that need a login
+- Albums fetched for the car now appear without leaving and coming back
+
 # **Version 2.8.2**
 
 #### Large libraries
