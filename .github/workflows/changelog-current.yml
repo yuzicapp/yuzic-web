@@ -1,0 +1,93 @@
+# Fails while the public changelog is behind the app's newest shipped release.
+#
+# Why this exists: on 2026-09-25 the site read "Version 2.6.0" while 2.11.0 was
+# on both stores — seven releases missing. Nothing broke, no check went red, and
+# the only signal was someone happening to read the page. Updating the site was
+# not a step in the app's release checklist, so it was nobody's job. It is a
+# step now (see the app's AGENTS.md), and this is the part that notices when the
+# step is skipped anyway.
+#
+# The app repo is public, so its tags are readable with this repo's own token —
+# no cross-repo secret to provision or rotate.
+
+name: Changelog is current
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+  schedule:
+    # Daily. The app releases roughly daily, and a release can land here at any
+    # hour, so this is a drift alarm rather than a gate on anything.
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Site changelog vs newest shipped release
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compare
+        env:
+          GH_TOKEN: ${{ github.token }}
+          APP_REPO: yuzicapp/yuzic
+        run: |
+          set -euo pipefail
+
+          # The newest release the app has actually tagged. Tags are bare
+          # semver ("2.11.0"), and only a real release creates one, so this is
+          # the shipped version rather than whatever `dev` is calling itself.
+          SHIPPED=$(gh api "repos/$APP_REPO/tags" --paginate --jq '.[].name' \
+            | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' \
+            | sort -V | tail -1)
+
+          # The topmost version heading on the page. The file is newest-first,
+          # so this is what a visitor sees as the latest.
+          PUBLISHED=$(grep -oE '^# \*\*Version [0-9]+\.[0-9]+\.[0-9]+\*\*' _pages/changelog.md \
+            | head -1 | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')
+
+          if [ -z "$SHIPPED" ] || [ -z "$PUBLISHED" ]; then
+            echo "::error::Could not read one of the two versions (shipped='$SHIPPED', published='$PUBLISHED'). Treat this as unverified, not as fine."
+            exit 1
+          fi
+
+          echo "shipped:   $SHIPPED"
+          echo "published: $PUBLISHED"
+
+          # The `Latest` marker has to sit on the topmost entry too, or the page
+          # tells a visitor the newest release is an old one.
+          MARKED=$(grep -A1 '^### `Latest`$' _pages/changelog.md \
+            | grep -oE '[0-9]+\.[0-9]+\.[0-9]+' | head -1 || true)
+
+          FAILED=0
+
+          if [ "$SHIPPED" != "$PUBLISHED" ]; then
+            # Only behind is a problem. Ahead means the site documents something
+            # unreleased, which is worth saying but is not the drift this guards.
+            NEWER=$(printf '%s\n%s\n' "$SHIPPED" "$PUBLISHED" | sort -V | tail -1)
+            if [ "$NEWER" = "$SHIPPED" ]; then
+              MISSING=$(gh api "repos/$APP_REPO/tags" --paginate --jq '.[].name' \
+                | grep -E '^[0-9]+\.[0-9]+\.[0-9]+$' \
+                | sort -V | awk -v p="$PUBLISHED" 'p==$0{f=1;next} f' | tr '\n' ' ')
+              echo "::error::The site's changelog is behind. It reads $PUBLISHED; $SHIPPED has shipped. Missing: ${MISSING:-unknown}. Expand each from the app's fastlane/metadata/android/en-US/changelogs/default.txt at that tag."
+              FAILED=1
+            else
+              echo "::warning::The site reads $PUBLISHED but the newest tag is $SHIPPED — the site is ahead, documenting a release that has not shipped."
+            fi
+          fi
+
+          if [ -n "$MARKED" ] && [ "$MARKED" != "$PUBLISHED" ]; then
+            echo "::error::The \`Latest\` marker sits on $MARKED, but the topmost entry is $PUBLISHED. Move the marker."
+            FAILED=1
+          fi
+
+          if [ "$FAILED" = 0 ]; then
+            echo "Up to date: the site's latest entry is $PUBLISHED, and that is the newest shipped release."
+          fi
+
+          exit "$FAILED"

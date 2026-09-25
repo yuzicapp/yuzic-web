@@ -9,6 +9,55 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.12.0**
+
+#### In the car
+- Opening Yuzic from CarPlay with your phone app closed works. 2.11.0 said it fixed this, and the fix was genuinely written, but it was missing from the build that shipped — so nobody ever got it. It is really in this one
+
+#### Reordering
+- Dragging Home shelves into the order you want, under Settings › Discovery › Home, works again. The handle moved the row but the new order was measured from the wrong place
+- Dragging is smoother in playlists, the play queue and settings
+
+# **Version 2.11.0**
+
+#### Search and browse
+- Search opens on your library instead of an empty page
+- The keyboard no longer forces itself open when you get there; your recent searches appear when you tap the field
+- Browse by genre, with each genre drawn at the size of how much of it you own
+
+#### Artists and albums
+- An artist's discography opens as a sortable list, rather than hiding behind a "more" button
+- The three track sections on an artist all show the same number of tracks
+- Albums read every genre and mood your files carry, and tell a single apart from an EP
+
+#### Playback
+- Loudness normalisation, so quiet and loud albums play at the same level. The figures come from the measurements your server already had and was sending all along; nothing needs rescanning. Under Settings › Player
+
+#### Fixes
+- Jellyfin no longer reports an error for a track that simply has no lyrics
+- Home stopped redrawing itself on every track change, and the tab bar stopped rebuilding on every screen you open
+
+# **Version 2.10.0**
+
+#### Make it yours
+- Set your own background, card and text colours, separately for light and dark
+- Save what you make as a theme, and pick from a gallery of them
+- The accent can follow the cover of whatever is playing
+- Text stays readable when a page and the cards on it are opposite shades
+
+#### Backgrounds
+- Draw the app over a photo of your own, or over the cover that is playing, with blur and dim
+- The background sits behind every tab, not only Home
+
+#### Layout
+- Float the tab bar off the edges, make it translucent, or label the tabs
+- A compact player, so the lyrics and everything under them start sooner
+- A full-width player as well
+- Larger or smaller text throughout
+
+#### Library
+- Pull down on your library to ask the server for changes there and then
+
 # **Version 2.9.0**
 
 #### In the car
