@@ -9,6 +9,24 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.13.0**
+
+#### How the app looks is yours to set
+- **Text size changes the app as soon as you pick it.** It used to wait for the next time Yuzic started, which made the setting look broken
+- The icons beside the text grow with it, so a row still reads as one line rather than big words next to small arrows
+- The tab bar and the playing bar keep their size on purpose: they are a fixed strip the rest of the app is measured against
+
+#### Spacing reaches the rest of the app
+- **Your spacing choice now applies to the play queue,** which drew its rows at a fixed size whatever you picked
+- And to Quick picks on Home, and to your Library's own rows — half that screen moved with the setting and half did not
+- **Lists no longer resize as they finish loading.** The placeholders shown while a list loads were a fixed size, so the list jumped the moment the music arrived
+
+#### Corners
+- The playing bar's artwork follows your corner style, and so does the artwork at the top of every options sheet
+
+#### Artwork
+- **An album with no artwork gets its own colour and initials** instead of the same grey icon on every one. Live recordings and bootlegs stop looking like one repeated tile. Nothing to set up, and an album keeps the same colour every time
+
 # **Version 2.12.0**
 
 #### In the car
