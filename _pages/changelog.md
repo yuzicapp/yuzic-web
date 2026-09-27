@@ -9,6 +9,25 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.15.0**
+
+#### Save a look you like
+- **Appearance profiles.** Yuzic had one look, edited in place, so trying something meant losing what you already had. Keep as many as you like now, and switch between them from the top of Appearance
+- **The Yuzic look is always there and is never edited.** Changing anything while it is selected makes a copy and moves you onto that, so nothing you set is a one-way door
+- A new profile starts as a copy of the one you are wearing, rather than from the stock look
+- Upgrading keeps the look you had, as a profile of its own, already selected
+
+#### Background photos
+- **Choose which part of a photo shows.** Drag it into place and zoom in. A photo that was not the shape of your screen was cropped to its middle, with no way to say which part mattered
+- **A preview shows the real thing** — your blur and your dim, on a frame shaped like your screen. The Background page never showed what any of its settings did, which made picking one feel like nothing had happened
+- Where the background reaches is now "Home, Search and Library" or "Every screen". "Home only" is gone: one tab wearing the photo while its two neighbours did not made the app look half-finished
+
+#### Fixes
+- **Bottom sheets were see-through in light mode** when you had a background image. Their rows drew straight onto the screen behind, on top of whatever was already there. Dark mode was never affected, which is why it lasted
+- Two buttons had labels that vanished over a background image, and reordering your sources lost the highlight on the row you were dragging — the same cause as the sheets
+- **The artist header fades into your wallpaper** instead of stopping on a hard line across the screen
+- An artist's round photo is a whole circle again. It was drawn with a flat bottom on every artist, wallpaper or not
+
 # **Version 2.14.0**
 
 #### Search
