@@ -9,6 +9,23 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.14.0**
+
+#### Search
+- **Searching and browsing are two states now, and they hold still.** Putting the keyboard away used to swap the screen out from under you — your recent searches would vanish and the browse grid would take their place. Tap the field to search, Cancel to go back, and nothing moves in between
+- Scrolling your results no longer did the same thing for the same reason. It doesn't now
+- **Your search filters are remembered.** They reset to "Library, everything" every time you left the tab, without saying so
+
+#### Genres and moods
+- Opening a genre gives you the same screen wherever you opened it from. There were two, and the one behind Library was the older of them
+- It is shaped like the rest of your library now, with full-width Play and Shuffle, and shows nine albums where it used to show three. The artwork at the top was never the genre's — it was whichever album happened to sort first, blurred
+- Moods work the same way as genres, rather than being a list with nothing to do
+
+#### Everywhere else
+- **A background image shows behind every screen,** not just the three tabs. Setting one and then opening an album used to drop you back onto a plain colour
+- Downloading an album closes the sheet, instead of leaving it open behind the one that replaced it
+- A library with no genre tags says so, rather than showing an empty screen
+
 # **Version 2.13.0**
 
 #### How the app looks is yours to set
