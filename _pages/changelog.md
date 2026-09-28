@@ -9,6 +9,25 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.16.0**
+
+#### Your wallpaper stays yours
+- **A background image is no longer painted over on album and artist pages.** The artist header drew a blurred photograph across the top of the screen, and album pages washed it in the cover's colour — two backdrops competing, and the one you chose lost. Both step aside now. The artist is still named by the round photo, the album by its cover
+- The artist header also stops holding room for art it no longer draws, so four tracks sit above the fold where one did
+
+#### When something can't be reached
+- **Home says when it can't reach your server,** not just when you have no connection. Every discovery shelf is a request, so they would all quietly disappear — and the one case worth announcing was the one it stayed silent for
+- **Radio says when your server doesn't offer it.** It used to report "Couldn't load. Check your connection." and offer a Try again that could never work
+- A shelf that fails to load says so instead of vanishing, and says it in your language — four of them had their error and empty text written in English only
+- A shelf no longer claims to be empty while it is still loading
+- Shared links can be pulled to refresh, which podcasts and radio already could
+
+#### Playback
+- **Opus, where your server offers it.** Navidrome ships an Opus profile and downsamples to Opus by default; Yuzic asked for MP3 regardless, so the bitrate you picked bought less than it could have. It is held to what your device can decode, so iOS — which has no Opus decoder — still gets MP3
+
+#### Appearance
+- **Text size and spacing are separated,** into Text and Layout. They answer different questions, and the combination that makes them look like one setting — large text with tight rows — is exactly the one that has to stay reachable
+
 # **Version 2.15.0**
 
 #### Save a look you like
