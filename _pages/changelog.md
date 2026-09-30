@@ -9,6 +9,25 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.17.0**
+
+#### Buttons that work both ways
+- **A headphone or car button unpauses again.** Pressing an AirPod stem paused the music and then did nothing at all — every press after it was read as another pause. Yuzic was asking the system which state it was in, and the system is not obliged to answer that question truthfully; it now goes by what it last said itself
+
+#### Crossfade
+- **Album segues stay hard-cut.** With crossfade on, a record mastered to run straight from one track into the next was faded through its own join — the overlap doubled, and the seam it was covering sounded worse than it does bare. Turning "Fade through segues" off has always promised this and never delivered it
+- **A crossfaded track now counts as fully listened to.** The fade-out is time you can still hear the song, and it was not being counted — so tracks at the boundary quietly fell short of the threshold and were never scrobbled. Measured at four seconds lost on an eight-second crossfade
+
+#### Settings that only offer what your server can do
+- **Loudness normalisation appears where your server measures loudness.** It was offered to everyone while only Navidrome reports the figure it needs, so on Jellyfin, Emby, Plex and local files the switch corrected against nothing
+- **Streaming quality appears where the stream obeys it.** Plex plays the file it is pointed at and takes no quality request, and a local file has nothing to transcode — so on both, setting cellular quality to Low still pulled the original
+
+#### Your library
+- **Jellyfin and Emby: an artist's top songs,** ranked by what you have played. The section was built for it and only ever appeared on Subsonic servers
+- **Playlists are found when search asks your server.** Switching Search from this device to your server quietly dropped them on every server
+- Album release dates on Jellyfin and Emby, which were never actually requested — so discographies sorted by a date that was always missing
+- A song's BPM and its path on the server, in its info sheet
+
 # **Version 2.16.0**
 
 #### Your wallpaper stays yours
