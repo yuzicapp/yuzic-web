@@ -9,6 +9,28 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.17.1**
+
+#### Tracks from a source
+- **Tapping the artist on the player works for a track from a source like Deezer.** It opened a page that said "Couldn't load artist. Check your connection.", because it asked your server about an artist your server has never seen. It now finds the artist where it actually lives
+- **The sheet for a track from a source has Go to album and Go to artist,** which only tracks from your library used to have
+
+#### Headphones
+- **Switching from one pair of headphones to another no longer pauses the music.** Any lost output used to pause playback, whatever replaced it. Now it pauses only when the sound would otherwise come out of the speaker
+
+#### Player
+- **Dragging the seek bar seeks.** The player's drag-to-close gesture took over a few points into a drag, so only a tap on the bar ever moved the song
+- **The equalizer has an on/off switch** that keeps your curve while it is off, and a Custom chip that remembers your last curve that is not a preset
+
+#### Offline and unreachable servers
+- **Downloaded playlists play offline.** With your server out of reach a playlist opened empty, even though every song in it was on your phone
+- **The "can't reach your server" banner shows on album, artist and playlist pages.** It was drawn behind the page, so the page covered it
+
+#### Your library
+- **Songs added to an album show up on it.** An album you had opened before kept its old track list for good, even though search could find the new songs. Album pages now refresh when you open them
+- **A download banner on Home clears when the downloads finish.** It counted finished downloads that Downtify still listed, so it never went away
+- **Nextcloud Music sign-in works** on servers that refuse Yuzic's usual way of signing in
+
 # **Version 2.17.0**
 
 #### Buttons that work both ways
