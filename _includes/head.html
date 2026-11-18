@@ -11,7 +11,16 @@
   <meta property="og:image" content="{{ '/assets/appicon.png' | absolute_url }}">
   <meta name="twitter:card" content="summary">
 
-  <link rel="icon" href="{{ '/assets/appicon.png' | relative_url }}">
+  {%- comment -%}
+    Sized icons rather than the app icon itself: `appicon.png` is 4167 square
+    and 101 KB, which every page load was fetching and downscaling to draw a
+    16-pixel tab icon. The 32 is 748 bytes. `apple-touch-icon` is what iOS
+    uses when the site is added to a home screen, and had no entry at all, so
+    iOS was rendering a screenshot of the page instead.
+  {%- endcomment -%}
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icon-32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/icon-192.png' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/apple-touch-icon.png' | relative_url }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
   {% if site.enable_smart_app_banner and site.ios_app_id %}
