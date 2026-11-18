@@ -9,6 +9,31 @@ include_in_header: true
 <br>
 
 ### `Latest`
+# **Version 2.18.0**
+
+#### Playing a song
+- **Tapping a song no longer covers the screen with an error.** On 2.17.1 the first song you played filled the screen with "Something went wrong" while the music carried on behind it, and the only way out was to force the app closed. The part of Yuzic that works out where a song lives was set up on the browsing screens only, and the player sits above them, so the player asked a question nobody was there to answer
+
+#### Lyrics
+- **Lyrics without timings can be opened.** Only lyrics that scroll line by line could be. Plain ones were fetched from your server, stored, and impossible to reach: the lyrics card on the player is the only way into the lyrics sheet, and it was only shown for lyrics that had timings to follow. They open from the same place now, without a line highlighted, because there is no current line to point at
+
+#### Favorites
+- **Favorites is back in the list you get from Add to playlist,** pinned at the top with a heart. It was taken out on the grounds that the heart on a song already does the job — but the fullscreen player has no heart, so the `+` was the one control there that looked like it would favourite a song, and it was the one place Favorites was missing. If you keep no playlists of your own, that list was empty altogether
+
+#### Volume levelling on Jellyfin
+- **Levelling, and the preamp under it, now work on Jellyfin.** Jellyfin measures how loud each track is and Yuzic never read the figure, so the preamp was being added to nothing at all: the slider moved and the sound did not change, on CarPlay, on headphones, everywhere. Yuzic now reads what your server measured
+- **The switch only appears when your server really has those figures.** Jellyfin has only measured loudness since 10.10, and only for a library it has scanned, so Yuzic asks before offering to level anything — better than a switch that is there and does nothing, which is how this was found
+
+#### When something goes wrong
+- **Settings has a Diagnostics screen.** It records what failed — tracks that would not play, crashes, downloads that did not finish — and lets you share the lot with a bug report. Passwords and server credentials are stripped out as it is recorded, not as it is shared, and the screen shows you everything it holds before you send it
+- **A crash that happens before Yuzic can draw anything is now recorded too,** rather than being the one kind of crash that left nothing behind
+
+#### Your server login
+- **Stream addresses are no longer kept on your device.** The address Yuzic plays a song from carries your username and password or token, and it was being written to storage and kept there for up to thirty days. It is built when a song plays and nowhere else now. This also fixes songs that refused to play after the app had been closed for a while, which was a saved address whose token had gone stale
+
+#### Getting started
+- **Terms of Service and Privacy Policy on the welcome screen are real links** rather than text that looked like them
+
 # **Version 2.17.1**
 
 #### Tracks from a source
