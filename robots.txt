@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yuzicapp.github.io/yuzic-web/sitemap.xml

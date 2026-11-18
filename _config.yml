@@ -7,6 +7,13 @@
 #
 # What is left is content.
 
+# Set explicitly rather than left to GitHub Pages, which injects both for a
+# project site. Without them a local build emits a relative `og:image` and a
+# canonical of "/", so the one build you can inspect is the one that lies.
+# A custom domain means changing these as well as adding a CNAME.
+url: https://yuzicapp.github.io
+baseurl: /yuzic-web
+
 app_name: Yuzic
 tagline: Your music, your way.
 app_description: >-
@@ -15,19 +22,18 @@ app_description: >-
 
 # Store and source
 ios_app_id: 6740042497
-ios_app_country: us
-appstore_link: https://apps.apple.com/us/app/yuzic-navidrome-jellyfin/id6740042497
+# No /us/ storefront: Apple sends a reader to their own store from this form.
+appstore_link: https://apps.apple.com/app/id6740042497
 playstore_link: https://play.google.com/store/apps/details?id=com.arinora.rawarr
 github_repo_url: https://github.com/yuzicapp/yuzic
 discord_link: https://discord.gg/NzsGEhg5Fs
 
 enable_smart_app_banner: true
 
-# Author
+# Author. Only the footer's copyright line reads this. Three sibling keys were
+# read by nothing and are gone, the contact address among them — it had no
+# reason to sit in a public repo when nothing rendered it.
 your_name: Zachary Starnes
-your_link: https://www.aritools.xyz/
-email_address: zackhhi@gmail.com
-github_username: yuzicapp
 
 
 # Feature List — what the app does, in the app's own terms.
@@ -102,7 +108,6 @@ sass:
 exclude:
   - LICENSE
   - README.md
-  - CNAME
 
 collections:
   pages:
@@ -110,3 +115,8 @@ collections:
     permalink: /:path/
 
 markdown: kramdown
+
+# Whitelisted by GitHub Pages and bundled with the `github-pages` gem, so it
+# needs no local install. Writes /sitemap.xml, which robots.txt points at.
+plugins:
+  - jekyll-sitemap
