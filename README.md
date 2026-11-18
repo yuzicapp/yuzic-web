@@ -11,10 +11,26 @@ Needs Ruby.
 
 ```sh
 bundle install
-bundle exec jekyll serve
+LANG=en_US.UTF-8 bundle exec jekyll serve --baseurl /yuzic-web
 ```
 
-Then open http://127.0.0.1:4000. It rebuilds as you save.
+Then open http://127.0.0.1:4000/yuzic-web/. It rebuilds as you save.
+
+Two things in that command are not decoration:
+
+- **`LANG`**, because `jekyll-sass-converter` 1.5.2 reads files in whatever
+  `Encoding.default_external` says, and a shell with no locale set makes that
+  US-ASCII. `_sass/_tokens.scss` has a `—` in a comment on line 3, so the
+  build fails on the first non-ASCII byte it meets with `Invalid US-ASCII
+  character "\xE2"`.
+- **`--baseurl /yuzic-web`**, because GitHub Pages sets `baseurl` to the repo
+  name for a project site and `_config.yml` does not. Without it every link
+  and asset path renders as `/…` locally and `/yuzic-web/…` once deployed, so
+  a local build is the wrong thing to check paths against.
+
+Ruby 3.2 and later also need `_plugins/ruby4_liquid_taint.rb`, which is in the
+repo and explains itself. GitHub Pages builds in safe mode and ignores
+`_plugins/`, so it is for local builds only.
 
 ## What is where
 
